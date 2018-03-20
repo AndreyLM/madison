@@ -4,31 +4,25 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit4c560eed4b8dbfdcfd40dc85ba92baba
+class ComposerStaticInit4a6df65459f36d408b6c18c27e285548
 {
-    public static $files = array (
-        'aaf5b53a99b4de51dadc23016def253f' => __DIR__ . '/..' . '/webimpress/http-middleware-compatibility/autoload/http-middleware.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
         'Z' => 
         array (
-            'Zend\\Stratigility\\' => 18,
-            'Zend\\Escaper\\' => 13,
+            'Zend\\Stdlib\\' => 12,
+            'Zend\\ServiceManager\\' => 20,
             'Zend\\Diactoros\\' => 15,
-        ),
-        'W' => 
-        array (
-            'Webimpress\\ComposerExtraDependency\\' => 35,
         ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
+            'Psr\\Http\\Server\\' => 16,
             'Psr\\Http\\Message\\' => 17,
+            'Psr\\Container\\' => 14,
         ),
         'I' => 
         array (
-            'Interop\\Http\\Server\\' => 20,
+            'Interop\\Container\\' => 18,
         ),
         'F' => 
         array (
@@ -42,33 +36,38 @@ class ComposerStaticInit4c560eed4b8dbfdcfd40dc85ba92baba
     );
 
     public static $prefixDirsPsr4 = array (
-        'Zend\\Stratigility\\' => 
+        'Zend\\Stdlib\\' => 
         array (
-            0 => __DIR__ . '/..' . '/zendframework/zend-stratigility/src',
+            0 => __DIR__ . '/..' . '/zendframework/zend-stdlib/src',
         ),
-        'Zend\\Escaper\\' => 
+        'Zend\\ServiceManager\\' => 
         array (
-            0 => __DIR__ . '/..' . '/zendframework/zend-escaper/src',
+            0 => __DIR__ . '/..' . '/zendframework/zend-servicemanager/src',
         ),
         'Zend\\Diactoros\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-diactoros/src',
         ),
-        'Webimpress\\ComposerExtraDependency\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/webimpress/composer-extra-dependency/src',
-        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Psr\\Http\\Server\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-server-handler/src',
+            1 => __DIR__ . '/..' . '/psr/http-server-middleware/src',
         ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
-        'Interop\\Http\\Server\\' => 
+        'Psr\\Container\\' => 
         array (
-            0 => __DIR__ . '/..' . '/http-interop/http-middleware/src',
+            0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Interop\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
         ),
         'Framework\\' => 
         array (
@@ -87,8 +86,8 @@ class ComposerStaticInit4c560eed4b8dbfdcfd40dc85ba92baba
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit4c560eed4b8dbfdcfd40dc85ba92baba::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit4c560eed4b8dbfdcfd40dc85ba92baba::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit4a6df65459f36d408b6c18c27e285548::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit4a6df65459f36d408b6c18c27e285548::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }

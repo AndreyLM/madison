@@ -1,45 +1,35 @@
 <?php
 
-
 use Aura\Router\RouterContainer;
-use Framework\Http\Router\ActionResolver;
-use Framework\Http\Router\AuraRouterAdapter;
-use Framework\Http\Router\Exception\RequestNotMatchedException;
-use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Diactoros\ServerRequestFactory;
 use Zend\Diactoros\Response\SapiEmitter;
+use Zend\Diactoros\ServerRequestFactory;
 
 chdir(dirname(__DIR__));
 require 'vendor/autoload.php';
 
-$aura = new RouterContainer();
-$map = $aura->getMap();
+$routerContainer = new RouterContainer();
+$map = $routerContainer->getMap();
 
-$domainName = '/custom-framework/public';
+$domainName = '/madison/public';
 
-$map->get('home', $domainName.'/', App\Http\Action\HelloAction::class);
-$map->get('about', $domainName.'/about', App\Http\Action\AboutAction::class);
-$map->get('blog', $domainName.'/blog', App\Http\Action\Blog\IndexAction::class);
-$map->get('blog_show', $domainName.'/blog/{id}', App\Http\Action\Blog\ShowAction::class)->tokens(['id' => '\d+']);
-
-$resolver = new ActionResolver();
-$router = new AuraRouterAdapter($aura);
+$map->get('home', $domainName.'/', function ($request, $response) {
+    $id = (int) $request->getAttribute('id');
+    $response->getBody()->write("You asked for blog entry {$id}.");
+    return $response;
+});
 
 $request = ServerRequestFactory::fromGlobals();
+$matcher = $routerContainer->getMatcher();
 
-try {
-    $result = $router->match($request);
-    foreach ($result->getAttributes() as $attribute=>$value) {
-          $request = $request->withAttribute($attribute, $value);
-    }
+$route = $matcher->match($request);
 
-    $action = $resolver->resolve($result->getHandler());
-    $response = $action($request);
 
-} catch (RequestNotMatchedException $e) {
-    $response = new HtmlResponse('Undefined page 2', 404);
+foreach ($route->attributes as $key => $val) {
+    $request = $request->withAttribute($key, $val);
 }
 
-$response = $response->withHeader('X-Developer', 'AndrewLM');
+$callable = $route->handler;
+$response = $callable($request);
+
 $emitter = new SapiEmitter();
 $emitter->emit($response);

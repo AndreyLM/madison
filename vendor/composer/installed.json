@@ -1,75 +1,23 @@
 [
     {
-        "name": "aura/router",
-        "version": "3.1.0",
-        "version_normalized": "3.1.0.0",
+        "name": "psr/log",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/php-fig/http-message.git",
-            "reference": "52507bc813c92511dbcacc7463f163ef5149ad38"
+            "url": "https://github.com/php-fig/log.git",
+            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/php-fig/http-message/zipball/52507bc813c92511dbcacc7463f163ef5149ad38",
-            "reference": "52507bc813c92511dbcacc7463f163ef5149ad38",
+            "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.5.0",
-            "psr/http-message": "~1.0",
-            "psr/log": "~1.0"
+            "php": ">=5.3.0"
         },
-        "require-dev": {
-            "phpunit/phpunit": "~5.7 || ~4.8",
-            "zendframework/zend-diactoros": "~1.0"
-        },
-        "time": "2017-03-02T16:34:47+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Aura\\Router\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Aura.Router Contributors",
-                "homepage": "https://github.com/auraphp/Aura.Router/contributors"
-            }
-        ],
-        "description": "Powerful, flexible web routing for PSR-7 requests.",
-        "homepage": "https://github.com/auraphp/Aura.Router",
-        "keywords": [
-            "psr-7",
-            "route",
-            "router",
-            "routing"
-        ]
-    },
-    {
-        "name": "http-interop/http-middleware",
-        "version": "0.5.0",
-        "version_normalized": "0.5.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/http-interop/http-middleware.git",
-            "reference": "b49e1f9f6c584e704317b563302e566b8ce11858"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/http-interop/http-middleware/zipball/b49e1f9f6c584e704317b563302e566b8ce11858",
-            "reference": "b49e1f9f6c584e704317b563302e566b8ce11858",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0",
-            "psr/http-message": "^1.0"
-        },
-        "time": "2017-09-18T15:27:03+00:00",
+        "time": "2016-10-10T12:19:37+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -79,7 +27,7 @@
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "Interop\\Http\\Server\\": "src/"
+                "Psr\\Log\\": "Psr/Log/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -92,17 +40,13 @@
                 "homepage": "http://www.php-fig.org/"
             }
         ],
-        "description": "Common interface for HTTP server-side middleware",
+        "description": "Common interface for logging libraries",
+        "homepage": "https://github.com/php-fig/log",
         "keywords": [
-            "http",
-            "middleware",
+            "log",
             "psr",
-            "psr-15",
-            "psr-7",
-            "request",
-            "response"
-        ],
-        "abandoned": "http-interop/http-server-middleware"
+            "psr-3"
+        ]
     },
     {
         "name": "psr/http-message",
@@ -110,12 +54,12 @@
         "version_normalized": "1.0.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/cdcchen/psr7.git",
+            "url": "https://github.com/php-fig/http-message.git",
             "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/cdcchen/psr7/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+            "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
             "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
             "shasum": ""
         },
@@ -157,34 +101,35 @@
         ]
     },
     {
-        "name": "psr/log",
-        "version": "1.0.2",
-        "version_normalized": "1.0.2.0",
+        "name": "aura/router",
+        "version": "3.1.0",
+        "version_normalized": "3.1.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/irfantoor/engine.git",
-            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
+            "url": "https://github.com/auraphp/Aura.Router.git",
+            "reference": "52507bc813c92511dbcacc7463f163ef5149ad38"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/irfantoor/engine/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
-            "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+            "url": "https://api.github.com/repos/auraphp/Aura.Router/zipball/52507bc813c92511dbcacc7463f163ef5149ad38",
+            "reference": "52507bc813c92511dbcacc7463f163ef5149ad38",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3.0"
+            "php": ">=5.5.0",
+            "psr/http-message": "~1.0",
+            "psr/log": "~1.0"
         },
-        "time": "2016-10-10T12:19:37+00:00",
+        "require-dev": {
+            "phpunit/phpunit": "~5.7 || ~4.8",
+            "zendframework/zend-diactoros": "~1.0"
+        },
+        "time": "2017-03-02T16:34:47+00:00",
         "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0.x-dev"
-            }
-        },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "Psr\\Log\\": "Psr/Log/"
+                "Aura\\Router\\": "src/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -193,16 +138,17 @@
         ],
         "authors": [
             {
-                "name": "PHP-FIG",
-                "homepage": "http://www.php-fig.org/"
+                "name": "Aura.Router Contributors",
+                "homepage": "https://github.com/auraphp/Aura.Router/contributors"
             }
         ],
-        "description": "Common interface for logging libraries",
-        "homepage": "https://github.com/php-fig/log",
+        "description": "Powerful, flexible web routing for PSR-7 requests.",
+        "homepage": "https://github.com/auraphp/Aura.Router",
         "keywords": [
-            "log",
-            "psr",
-            "psr-3"
+            "psr-7",
+            "route",
+            "router",
+            "routing"
         ]
     },
     {
@@ -211,19 +157,21 @@
         "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/sebastianbergmann/phpunit.git",
-            "reference": "4f2e7d0db47e93468d84401fbe1c755c83f2d28b"
+            "url": "https://github.com/Roave/SecurityAdvisories.git",
+            "reference": "6da6150c9fb568739c8508a9859e9d5d7a5e99e9"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/4f2e7d0db47e93468d84401fbe1c755c83f2d28b",
-            "reference": "4f2e7d0db47e93468d84401fbe1c755c83f2d28b",
+            "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/6da6150c9fb568739c8508a9859e9d5d7a5e99e9",
+            "reference": "6da6150c9fb568739c8508a9859e9d5d7a5e99e9",
             "shasum": ""
         },
         "conflict": {
             "3f/pygmentize": "<1.2",
             "adodb/adodb-php": "<5.20.6",
             "amphp/artax": "<1.0.6|>=2,<2.0.6",
+            "amphp/http": "<1.0.1",
+            "asymmetricrypt/asymmetricrypt": ">=0,<9.9.99",
             "aws/aws-sdk-php": ">=3,<3.2.1",
             "bugsnag/bugsnag-laravel": ">=2,<2.0.2",
             "cakephp/cakephp": ">=1.3,<1.3.18|>=2,<2.4.99|>=2.5,<2.5.99|>=2.6,<2.6.12|>=2.7,<2.7.6|>=3,<3.0.15|>=3.1,<3.1.4",
@@ -246,9 +194,10 @@
             "doctrine/mongodb-odm-bundle": ">=2,<3.0.1",
             "doctrine/orm": ">=2,<2.4.8|>=2.5,<2.5.1",
             "dompdf/dompdf": ">=0.6,<0.6.2",
-            "drupal/core": ">=8,<8.3.7",
-            "drupal/drupal": ">=8,<8.3.7",
-            "ezsystems/ezpublish-legacy": ">=5.3,<5.3.12.2|>=5.4,<5.4.10.1|>=2017.8,<2017.8.1.1",
+            "drupal/core": ">=8,<8.4.5",
+            "drupal/drupal": ">=8,<8.4.5",
+            "erusev/parsedown": "<1.7",
+            "ezsystems/ezpublish-legacy": ">=5.3,<5.3.12.3|>=5.4,<5.4.11.3|>=2017.8,<2017.8.1.1|>=2017.12,<2017.12.2.1",
             "firebase/php-jwt": "<2",
             "friendsofsymfony/rest-bundle": ">=1.2,<1.2.2",
             "friendsofsymfony/user-bundle": ">=1.2,<1.3.5",
@@ -269,6 +218,8 @@
             "oro/crm": ">=1.7,<1.7.4",
             "oro/platform": ">=1.7,<1.7.4",
             "padraic/humbug_get_contents": "<1.1.2",
+            "pagarme/pagarme-php": ">=0,<3",
+            "paragonie/random_compat": "<2",
             "phpmailer/phpmailer": ">=5,<5.2.24",
             "phpunit/phpunit": ">=4.8.19,<4.8.28|>=5.0.10,<5.6.3",
             "phpxmlrpc/extras": "<0.6.1",
@@ -281,11 +232,12 @@
             "silverstripe/forum": "<=0.6.1|>=0.7,<=0.7.3",
             "silverstripe/framework": ">=3,<3.3",
             "silverstripe/userforms": "<3",
-            "simplesamlphp/saml2": "<1.10.4|>=2,<2.3.5|>=3,<3.1.1",
+            "simplesamlphp/saml2": "<1.10.6|>=2,<2.3.8|>=3,<3.1.4",
             "simplesamlphp/simplesamlphp": "<1.15.2",
             "simplesamlphp/simplesamlphp-module-infocard": "<1.0.1",
             "socalnick/scn-social-auth": "<1.15.2",
-            "squizlabs/php_codesniffer": ">=1,<2.8.1",
+            "squizlabs/php_codesniffer": ">=1,<2.8.1|>=3,<3.0.1",
+            "stormpath/sdk": ">=0,<9.9.99",
             "swiftmailer/swiftmailer": ">=4,<5.4.5",
             "symfony/dependency-injection": ">=2,<2.0.17",
             "symfony/form": ">=2.3,<2.3.35|>=2.4,<2.6.12|>=2.7,<2.7.38|>=2.8,<2.8.31|>=3,<3.2.14|>=3.3,<3.3.13",
@@ -305,18 +257,21 @@
             "symfony/web-profiler-bundle": ">=2,<2.3.19|>=2.4,<2.4.9|>=2.5,<2.5.4",
             "symfony/yaml": ">=2,<2.0.22|>=2.1,<2.1.7",
             "thelia/backoffice-default-template": ">=2.1,<2.1.2",
-            "thelia/thelia": ">=2.1.0-beta1,<2.1.3|>=2.1,<2.1.2",
+            "thelia/thelia": ">=2.1,<2.1.2|>=2.1.0-beta1,<2.1.3",
+            "titon/framework": ">=0,<9.9.99",
             "twig/twig": "<1.20",
             "typo3/cms": ">=6.2,<6.2.30|>=7,<7.6.22|>=8,<8.7.5",
             "typo3/flow": ">=1,<1.0.4|>=1.1,<1.1.1|>=2,<2.0.1|>=2.3,<2.3.16|>=3,<3.0.10|>=3.1,<3.1.7|>=3.2,<3.2.7|>=3.3,<3.3.5",
             "typo3/neos": ">=1.1,<1.1.3|>=1.2,<1.2.13|>=2,<2.0.4",
             "willdurand/js-translation-bundle": "<2.1.1",
             "yiisoft/yii": ">=1.1.14,<1.1.15",
-            "yiisoft/yii2": "<2.0.14",
+            "yiisoft/yii2": "<2.0.15",
             "yiisoft/yii2-bootstrap": "<2.0.4",
-            "yiisoft/yii2-dev": "<2.0.14",
+            "yiisoft/yii2-dev": "<2.0.15",
+            "yiisoft/yii2-elasticsearch": "<2.0.5",
             "yiisoft/yii2-gii": "<2.0.4",
             "yiisoft/yii2-jui": "<2.0.4",
+            "yiisoft/yii2-redis": "<2.0.8",
             "zendframework/zend-cache": ">=2.4,<2.4.8|>=2.5,<2.5.3",
             "zendframework/zend-captcha": ">=2,<2.4.9|>=2.5,<2.5.2",
             "zendframework/zend-crypt": ">=2,<2.4.9|>=2.5,<2.5.2",
@@ -341,7 +296,7 @@
             "zfcampus/zf-apigility-doctrine": ">=1,<1.0.3",
             "zfr/zfr-oauth2-server-module": "<0.1.2"
         },
-        "time": "2018-02-21T07:05:29+00:00",
+        "time": "2018-03-20T15:54:02+00:00",
         "type": "metapackage",
         "notification-url": "https://packagist.org/downloads/",
         "license": [
@@ -357,115 +312,18 @@
         "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it"
     },
     {
-        "name": "webimpress/composer-extra-dependency",
-        "version": "0.2.2",
-        "version_normalized": "0.2.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/webimpress/composer-extra-dependency.git",
-            "reference": "31fa56391d30f03b1180c87610cbe22254780ad9"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/webimpress/composer-extra-dependency/zipball/31fa56391d30f03b1180c87610cbe22254780ad9",
-            "reference": "31fa56391d30f03b1180c87610cbe22254780ad9",
-            "shasum": ""
-        },
-        "require": {
-            "composer-plugin-api": "^1.1",
-            "php": "^5.6 || ^7.0"
-        },
-        "require-dev": {
-            "composer/composer": "^1.5.2",
-            "mikey179/vfsstream": "^1.6.5",
-            "phpunit/phpunit": "^5.7.22 || ^6.4.1",
-            "zendframework/zend-coding-standard": "~1.0.0"
-        },
-        "time": "2017-10-17T17:15:14+00:00",
-        "type": "composer-plugin",
-        "extra": {
-            "class": "Webimpress\\ComposerExtraDependency\\Plugin"
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Webimpress\\ComposerExtraDependency\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-2-Clause"
-        ],
-        "description": "Composer plugin to require extra dependencies",
-        "homepage": "https://github.com/webimpress/composer-extra-dependency",
-        "keywords": [
-            "composer",
-            "dependency",
-            "webimpress"
-        ]
-    },
-    {
-        "name": "webimpress/http-middleware-compatibility",
-        "version": "0.1.4",
-        "version_normalized": "0.1.4.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/webimpress/http-middleware-compatibility.git",
-            "reference": "8ed1c2c7523dce0035b98bc4f3a73ca9cd1d3717"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/webimpress/http-middleware-compatibility/zipball/8ed1c2c7523dce0035b98bc4f3a73ca9cd1d3717",
-            "reference": "8ed1c2c7523dce0035b98bc4f3a73ca9cd1d3717",
-            "shasum": ""
-        },
-        "require": {
-            "http-interop/http-middleware": "^0.1.1 || ^0.2 || ^0.3 || ^0.4.1 || ^0.5",
-            "php": "^5.6 || ^7.0",
-            "webimpress/composer-extra-dependency": "^0.2.2"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "^5.7.23 || ^6.4.3"
-        },
-        "time": "2017-10-17T17:31:10+00:00",
-        "type": "library",
-        "extra": {
-            "dependency": [
-                "http-interop/http-middleware"
-            ]
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "autoload/http-middleware.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-2-Clause"
-        ],
-        "description": "Compatibility library for Draft PSR-15 HTTP Middleware",
-        "homepage": "https://github.com/webimpress/http-middleware-compatibility",
-        "keywords": [
-            "middleware",
-            "psr-15",
-            "webimpress"
-        ],
-        "abandoned": "psr/http-server-middleware"
-    },
-    {
         "name": "zendframework/zend-diactoros",
-        "version": "1.7.0",
-        "version_normalized": "1.7.0.0",
+        "version": "1.7.1",
+        "version_normalized": "1.7.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/zendframework/zend-diactoros.git",
-            "reference": "ed6ce7e2105c400ca10277643a8327957c0384b7"
+            "reference": "bf26aff803a11c5cc8eb7c4878a702c403ec67f1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/ed6ce7e2105c400ca10277643a8327957c0384b7",
-            "reference": "ed6ce7e2105c400ca10277643a8327957c0384b7",
+            "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/bf26aff803a11c5cc8eb7c4878a702c403ec67f1",
+            "reference": "bf26aff803a11c5cc8eb7c4878a702c403ec67f1",
             "shasum": ""
         },
         "require": {
@@ -481,7 +339,7 @@
             "phpunit/phpunit": "^5.7.16 || ^6.0.8",
             "zendframework/zend-coding-standard": "~1.0"
         },
-        "time": "2018-01-04T18:21:48+00:00",
+        "time": "2018-02-26T15:44:50+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -508,105 +366,314 @@
         ]
     },
     {
-        "name": "zendframework/zend-escaper",
-        "version": "2.5.2",
-        "version_normalized": "2.5.2.0",
+        "name": "psr/http-server-handler",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/zendframework/zend-escaper.git",
-            "reference": "2dcd14b61a72d8b8e27d579c6344e12c26141d4e"
+            "url": "https://github.com/php-fig/http-server-handler.git",
+            "reference": "439d92054dc06097f2406ec074a2627839955a02"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/zendframework/zend-escaper/zipball/2dcd14b61a72d8b8e27d579c6344e12c26141d4e",
-            "reference": "2dcd14b61a72d8b8e27d579c6344e12c26141d4e",
+            "url": "https://api.github.com/repos/php-fig/http-server-handler/zipball/439d92054dc06097f2406ec074a2627839955a02",
+            "reference": "439d92054dc06097f2406ec074a2627839955a02",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.5"
+            "php": ">=7.0",
+            "psr/http-message": "^1.0"
         },
-        "require-dev": {
-            "fabpot/php-cs-fixer": "1.7.*",
-            "phpunit/phpunit": "~4.0"
-        },
-        "time": "2016-06-30T19:48:38+00:00",
+        "time": "2018-01-22T17:04:15+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "2.5-dev",
-                "dev-develop": "2.6-dev"
+                "dev-master": "1.0.x-dev"
             }
         },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "Zend\\Escaper\\": "src/"
+                "Psr\\Http\\Server\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for HTTP server-side request handler",
+        "keywords": [
+            "handler",
+            "http",
+            "http-interop",
+            "psr",
+            "psr-15",
+            "psr-7",
+            "request",
+            "response",
+            "server"
+        ]
+    },
+    {
+        "name": "psr/http-server-middleware",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/http-server-middleware.git",
+            "reference": "ea17eb1fb2c8df6db919cc578451a8013c6a0ae5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/http-server-middleware/zipball/ea17eb1fb2c8df6db919cc578451a8013c6a0ae5",
+            "reference": "ea17eb1fb2c8df6db919cc578451a8013c6a0ae5",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0",
+            "psr/http-message": "^1.0",
+            "psr/http-server-handler": "^1.0"
+        },
+        "time": "2018-01-22T17:08:31+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Http\\Server\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for HTTP server-side middleware",
+        "keywords": [
+            "http",
+            "http-interop",
+            "middleware",
+            "psr",
+            "psr-15",
+            "psr-7",
+            "request",
+            "response"
+        ]
+    },
+    {
+        "name": "zendframework/zend-stdlib",
+        "version": "3.1.0",
+        "version_normalized": "3.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/zend-stdlib.git",
+            "reference": "debedcfc373a293f9250cc9aa03cf121428c8e78"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/zend-stdlib/zipball/debedcfc373a293f9250cc9aa03cf121428c8e78",
+            "reference": "debedcfc373a293f9250cc9aa03cf121428c8e78",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.6 || ^7.0"
+        },
+        "require-dev": {
+            "athletic/athletic": "~0.1",
+            "phpunit/phpunit": "~4.0",
+            "squizlabs/php_codesniffer": "^2.6.2"
+        },
+        "time": "2016-09-13T14:38:50+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.1-dev",
+                "dev-develop": "3.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Zend\\Stdlib\\": "src/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "BSD-3-Clause"
         ],
-        "homepage": "https://github.com/zendframework/zend-escaper",
+        "homepage": "https://github.com/zendframework/zend-stdlib",
         "keywords": [
-            "escaper",
+            "stdlib",
             "zf2"
         ]
     },
     {
-        "name": "zendframework/zend-stratigility",
-        "version": "2.1.2",
-        "version_normalized": "2.1.2.0",
+        "name": "psr/container",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/zendframework/zend-stratigility.git",
-            "reference": "7dfec8dee92dad0d01e68365015f2848c250fe9f"
+            "url": "https://github.com/php-fig/container.git",
+            "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/zendframework/zend-stratigility/zipball/7dfec8dee92dad0d01e68365015f2848c250fe9f",
-            "reference": "7dfec8dee92dad0d01e68365015f2848c250fe9f",
+            "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+            "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
             "shasum": ""
         },
         "require": {
-            "php": "^5.6 || ^7.0",
-            "psr/http-message": "^1.0",
-            "webimpress/http-middleware-compatibility": "^0.1.3",
-            "zendframework/zend-escaper": "^2.3"
+            "php": ">=5.3.0"
         },
-        "require-dev": {
-            "malukenho/docheader": "^0.1.5",
-            "phpunit/phpunit": "^6.0.8 || ^5.7.15",
-            "zendframework/zend-coding-standard": "~1.0.0",
-            "zendframework/zend-diactoros": "^1.0"
-        },
-        "suggest": {
-            "psr/http-message-implementation": "Please install a psr/http-message-implementation to consume Stratigility; e.g., zendframework/zend-diactoros"
-        },
-        "time": "2017-10-12T13:14:14+00:00",
+        "time": "2017-02-14T16:28:37+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "2.1.0-dev",
-                "dev-develop": "2.2.0-dev"
+                "dev-master": "1.0.x-dev"
             }
         },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "Zend\\Stratigility\\": "src/"
+                "Psr\\Container\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common Container Interface (PHP FIG PSR-11)",
+        "homepage": "https://github.com/php-fig/container",
+        "keywords": [
+            "PSR-11",
+            "container",
+            "container-interface",
+            "container-interop",
+            "psr"
+        ]
+    },
+    {
+        "name": "container-interop/container-interop",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/container-interop/container-interop.git",
+            "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/container-interop/container-interop/zipball/79cbf1341c22ec75643d841642dd5d6acd83bdb8",
+            "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8",
+            "shasum": ""
+        },
+        "require": {
+            "psr/container": "^1.0"
+        },
+        "time": "2017-02-14T19:40:03+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Interop\\Container\\": "src/Interop/Container/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
+        "homepage": "https://github.com/container-interop/container-interop"
+    },
+    {
+        "name": "zendframework/zend-servicemanager",
+        "version": "3.3.2",
+        "version_normalized": "3.3.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zendframework/zend-servicemanager.git",
+            "reference": "9f35a104b8d4d3b32da5f4a3b6efc0dd62e5af42"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zendframework/zend-servicemanager/zipball/9f35a104b8d4d3b32da5f4a3b6efc0dd62e5af42",
+            "reference": "9f35a104b8d4d3b32da5f4a3b6efc0dd62e5af42",
+            "shasum": ""
+        },
+        "require": {
+            "container-interop/container-interop": "^1.2",
+            "php": "^5.6 || ^7.0",
+            "psr/container": "^1.0",
+            "zendframework/zend-stdlib": "^3.1"
+        },
+        "provide": {
+            "container-interop/container-interop-implementation": "^1.2",
+            "psr/container-implementation": "^1.0"
+        },
+        "require-dev": {
+            "mikey179/vfsstream": "^1.6.5",
+            "ocramius/proxy-manager": "^1.0 || ^2.0",
+            "phpbench/phpbench": "^0.13.0",
+            "phpunit/phpunit": "^5.7.25 || ^6.4.4",
+            "zendframework/zend-coding-standard": "~1.0.0"
+        },
+        "suggest": {
+            "ocramius/proxy-manager": "ProxyManager 1.* to handle lazy initialization of services",
+            "zendframework/zend-stdlib": "zend-stdlib ^2.5 if you wish to use the MergeReplaceKey or MergeRemoveKey features in Config instances"
+        },
+        "time": "2018-01-29T16:48:37+00:00",
+        "bin": [
+            "bin/generate-deps-for-config-factory",
+            "bin/generate-factory-for-class"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.3-dev",
+                "dev-develop": "4.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Zend\\ServiceManager\\": "src/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
             "BSD-3-Clause"
         ],
-        "description": "Middleware for PHP",
-        "homepage": "https://github.com/zendframework/zend-stratigility",
+        "description": "Factory-Driven Dependency Injection Container",
         "keywords": [
-            "http",
-            "middleware",
-            "psr-7"
+            "PSR-11",
+            "ZendFramework",
+            "dependency-injection",
+            "di",
+            "dic",
+            "service-manager",
+            "servicemanager",
+            "zf"
         ]
     }
 ]
