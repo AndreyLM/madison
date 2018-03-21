@@ -9,7 +9,7 @@
 namespace App\Router;
 
 
-use App\Router\Exception\RequestNotMatchedException;
+use App\Router\Exceptions\RequestNotMatchedException;
 use App\Router\Exceptions\RouteNotFoundException;
 use Aura\Router\Exception\RouteNotFound;
 use Aura\Router\Route;
@@ -38,7 +38,7 @@ class AuraRouterAdapter implements IRouter
     {
         $matcher = $this->aura->getMatcher();
 
-
+//        echo var_dump($matcher); die;
         if($route = $matcher->match($request)) {
             return new Result($route->name, $route->handler, $route->attributes);
         }
@@ -68,13 +68,18 @@ class AuraRouterAdapter implements IRouter
      * @param $methods
      * @param $options
      */
-    public function addRoute($name, $path, $handler, $methods = 'get', $options = []): void
+    public function addRoute($name, $path, $handler, $methods = ['GET'], $options = []): void
     {
+
+
         $route = new Route();
 
         $route->name($name);
         $route->path($path);
         $route->handler($handler);
+
+
+
 
         foreach ($options as $name => $value) {
             switch ($name) {
@@ -92,9 +97,7 @@ class AuraRouterAdapter implements IRouter
             }
         }
 
-        if ($methods) {
-            $route->allows($methods);
-        }
+        $route->allows($methods);
 
         $this->aura->getMap()->addRoute($route);
     }

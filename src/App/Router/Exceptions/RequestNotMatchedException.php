@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Router\Exception;
+namespace App\Router\Exceptions;
 
 use Psr\Http\Message\ServerRequestInterface;
 
