@@ -1,8 +1,8 @@
 <?php
 namespace Controllers;
 
-use Zend\Diactoros\Request;
 use Zend\Diactoros\Response;
+use Zend\Diactoros\ServerRequest;
 
 class DefaultController
 {
@@ -15,13 +15,13 @@ class DefaultController
      */
     private $response;
 
-    public function __construct(Request $request, Response $response)
+    public function __construct(ServerRequest $request, Response $response)
     {
         $this->request = $request;
         $this->response = $response;
     }
 
     public function Index(){
-
+        return new Response\HtmlResponse('hello');
     }
 }

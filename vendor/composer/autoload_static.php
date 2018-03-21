@@ -13,6 +13,10 @@ class ComposerStaticInit4a6df65459f36d408b6c18c27e285548
             'Zend\\ServiceManager\\' => 20,
             'Zend\\Diactoros\\' => 15,
         ),
+        'V' => 
+        array (
+            'Views\\' => 6,
+        ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
@@ -20,13 +24,17 @@ class ComposerStaticInit4a6df65459f36d408b6c18c27e285548
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
         ),
+        'M' => 
+        array (
+            'Models\\' => 7,
+        ),
         'I' => 
         array (
             'Interop\\Container\\' => 18,
         ),
-        'F' => 
+        'C' => 
         array (
-            'Framework\\' => 10,
+            'Controllers\\' => 12,
         ),
         'A' => 
         array (
@@ -48,6 +56,10 @@ class ComposerStaticInit4a6df65459f36d408b6c18c27e285548
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-diactoros/src',
         ),
+        'Views\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Views',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
@@ -65,13 +77,17 @@ class ComposerStaticInit4a6df65459f36d408b6c18c27e285548
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
+        'Models\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Models',
+        ),
         'Interop\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
         ),
-        'Framework\\' => 
+        'Controllers\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src/Framework',
+            0 => __DIR__ . '/../..' . '/Controllers',
         ),
         'Aura\\Router\\' => 
         array (
