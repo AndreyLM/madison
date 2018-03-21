@@ -1,24 +1,15 @@
 <?php
 namespace Controllers;
 
+use App\Controller\BaseController;
 use Zend\Diactoros\Request;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Diactoros\ServerRequest;
 
-class DefaultController
+class DefaultController extends BaseController
 {
-    /**
-     * @var Request
-     */
-    private $request;
-
-
-    public function __construct(ServerRequest $request)
-    {
-        $this->request = $request;
-    }
 
     public function Index(){
-        return new HtmlResponse('hello');
+        return $this->renderHtml('index');
     }
 }

@@ -1,10 +1,12 @@
 <?php
 namespace App;
 
+use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response\EmitterInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\Stratigility\MiddlewarePipeInterface;
 
 class Application
@@ -23,6 +25,8 @@ class Application
      * @var ServerRequestInterface
      */
     private $request;
+
+    private $container;
 
     public function __construct(MiddlewarePipeInterface $middleware,
                                 ServerRequestInterface $request,
@@ -45,6 +49,15 @@ class Application
     public function pipe(MiddlewareInterface $middleware)
     {
         $this->middleware->pipe($middleware);
+    }
+
+    public function setContainer(ContainerInterface $container)
+    {
+        $this->container = $container;
+    }
+
+    public function getContainer() {
+        return $this->container;
     }
 }
 

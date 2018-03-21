@@ -8,7 +8,7 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 
 $router = $serviceManager->get(IRouter::class);
 
-$router->addRoute('home', '/', function ($request) {
-    $controller = new DefaultController($request);
+$router->addRoute('home', '/', function ($request, $template) {
+    $controller = new DefaultController($request, $template);
     return $controller->Index();
 });;

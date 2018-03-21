@@ -3,6 +3,7 @@ namespace App\Middlewares;
 
 use App\Router\Exceptions\RequestNotMatchedException;
 use App\Router\IRouter;
+use App\Template\ITemplateRenderer;
 use JsonSchema\Exception\ResourceNotFoundException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -17,10 +18,15 @@ class RouterMiddleware implements MiddlewareInterface
      * @var IRouter
      */
     private $router;
+    /**
+     * @var ITemplateRenderer
+     */
+    private $templateRenderer;
 
-    public function __construct(IRouter $router)
+    public function __construct(IRouter $router, ITemplateRenderer $templateRenderer)
     {
         $this->router = $router;
+        $this->templateRenderer = $templateRenderer;
     }
 
     /**
@@ -38,7 +44,7 @@ class RouterMiddleware implements MiddlewareInterface
             }
 
             $action = $result->getHandler();
-            return $action($request);
+            return $action($request, $this->templateRenderer);
 
         } catch (RequestNotMatchedException $e) {
             return new HtmlResponse('Undefined page 2', 404);

@@ -1,7 +1,8 @@
 <?php
 namespace App\Router;
 
-use App\Router\Exception\RequestNotMatchedException;
+
+use App\Router\Exceptions\RequestNotMatchedException;
 use App\Router\Exceptions\RouteNotFoundException;
 use Psr\Http\Message\ServerRequestInterface;
 
