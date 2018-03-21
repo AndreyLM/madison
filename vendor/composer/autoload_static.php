@@ -6,16 +6,34 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit4a6df65459f36d408b6c18c27e285548
 {
+    public static $files = array (
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        'c0c684e103c597a31a3e514398f79ec1' => __DIR__ . '/..' . '/zendframework/zend-stratigility/src/functions/double-pass-middleware.php',
+        '968cb91a78f08ea033c0e1afe256c864' => __DIR__ . '/..' . '/zendframework/zend-stratigility/src/functions/host.php',
+        '73f02b5e05532acfb968fa91193a3d17' => __DIR__ . '/..' . '/zendframework/zend-stratigility/src/functions/middleware.php',
+        '7ba36b1c7d480f53d620df374623203a' => __DIR__ . '/..' . '/zendframework/zend-stratigility/src/functions/path.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'Z' => 
         array (
+            'Zend\\Stratigility\\' => 18,
             'Zend\\Stdlib\\' => 12,
             'Zend\\ServiceManager\\' => 20,
+            'Zend\\Escaper\\' => 13,
             'Zend\\Diactoros\\' => 15,
         ),
         'V' => 
         array (
             'Views\\' => 6,
+        ),
+        'T' => 
+        array (
+            'Twig\\' => 5,
+        ),
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
         ),
         'P' => 
         array (
@@ -32,6 +50,10 @@ class ComposerStaticInit4a6df65459f36d408b6c18c27e285548
         array (
             'Interop\\Container\\' => 18,
         ),
+        'F' => 
+        array (
+            'Fig\\Http\\Message\\' => 17,
+        ),
         'C' => 
         array (
             'Controllers\\' => 12,
@@ -44,6 +66,10 @@ class ComposerStaticInit4a6df65459f36d408b6c18c27e285548
     );
 
     public static $prefixDirsPsr4 = array (
+        'Zend\\Stratigility\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-stratigility/src',
+        ),
         'Zend\\Stdlib\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-stdlib/src',
@@ -52,6 +78,10 @@ class ComposerStaticInit4a6df65459f36d408b6c18c27e285548
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-servicemanager/src',
         ),
+        'Zend\\Escaper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-escaper/src',
+        ),
         'Zend\\Diactoros\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-diactoros/src',
@@ -59,6 +89,14 @@ class ComposerStaticInit4a6df65459f36d408b6c18c27e285548
         'Views\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Views',
+        ),
+        'Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
         'Psr\\Log\\' => 
         array (
@@ -85,6 +123,10 @@ class ComposerStaticInit4a6df65459f36d408b6c18c27e285548
         array (
             0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
         ),
+        'Fig\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fig/http-message-util/src',
+        ),
         'Controllers\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Controllers',
@@ -99,11 +141,22 @@ class ComposerStaticInit4a6df65459f36d408b6c18c27e285548
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'T' => 
+        array (
+            'Twig_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit4a6df65459f36d408b6c18c27e285548::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit4a6df65459f36d408b6c18c27e285548::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit4a6df65459f36d408b6c18c27e285548::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }
