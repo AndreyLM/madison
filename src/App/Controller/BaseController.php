@@ -10,11 +10,11 @@ class BaseController
     /**
      * @var ITemplateRenderer
      */
-    private $template;
+    protected $template;
     /**
      * @var ServerRequestInterface
      */
-    private $request;
+    protected $request;
 
     public function  __construct(ServerRequestInterface $request, ITemplateRenderer $template)
     {
@@ -23,10 +23,8 @@ class BaseController
         $this->request = $request;
     }
 
-    public function renderHtml($view, array $args=[])    {
-
+    public function renderHtml($view, array $args=[]){
         return new HtmlResponse($this->template->render($view, $args));
-//        return $this->template->render($view, $args);
     }
 
 }

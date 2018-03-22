@@ -7,6 +7,7 @@ use App\Router\IRouter;
 use App\Template\ITemplateRenderer;
 use App\Template\Twig\TwigRenderer;
 use Aura\Router\RouterContainer;
+use Models\Repositories\IProductRepository;
 use Psr\Container\ContainerInterface;
 use Zend\Diactoros\Response\SapiEmitter;
 use Zend\Diactoros\ServerRequestFactory;
@@ -28,6 +29,9 @@ return [
            return $app;
 
        },
+        IProductRepository::class => function() {
+            return new \Models\Repositories\DummyProductRepository();
+        },
        IRouter::class => function(ContainerInterface $container) {
             $basePath = $container->get('config')['basePath'];
             return new \App\Router\AuraRouterAdapter(new RouterContainer($basePath));
