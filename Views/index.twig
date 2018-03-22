@@ -1,11 +1,16 @@
 {% extends 'layouts/main.twig' %}
 
-{% block title %}{{ parent() }} hello{% endblock %}
-{% block breadcrumbs %}    <ul class="breadcrumb">
-	<li><a href="">Home</a></li>
-	<li class="active">Hello</li>
-	</ul>{% endblock %}
+{% block title %}{{ parent() }} - home {% endblock %}
+{% block meta_description %}{% endblock %}
+{% block meta_keywords %}{% endblock %}
+{% block pageTitle %} Index {% endblock %}
+
+{% block breadcrumbs %}
+	<li><a href="#">Home</a></li>
+	<li class="active">Index</li>
+{% endblock %}
+
 
 {% block content %}
-	<p>Hello</p>
+	<p>Index content</p>
 {% endblock %}
