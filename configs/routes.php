@@ -10,6 +10,17 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 
 $router = $serviceManager->get(IRouter::class);
 
+
+$router->addRoute('product', '/product/{id}', function ($request, $template) use ($serviceManager) {
+    $controller = new ProductController($request, $template, $serviceManager->get(IProductRepository::class));
+    return $controller->view();
+}, ['GET'], ['tokens' => ['id' => '\d+']]);
+
+$router->addRoute('product_create', '/product/create', function ($request, $template) use ($serviceManager) {
+    $controller = new ProductController($request, $template, $serviceManager->get(IProductRepository::class));
+    return $controller->create();
+});
+
 $router->addRoute('home', '/', function ($request, $template) {
     $controller = new DefaultController($request, $template);
     return $controller->index();
@@ -20,22 +31,12 @@ $router->addRoute('products', '/products', function ($request, $template) use ($
     return $controller->index();
 });
 
-$router->addRoute('product', '/product', function ($request, $template) use ($serviceManager) {
+$router->addRoute('product_delete', '/product/delete/{id}', function ($request, $template) use ($serviceManager) {
     $controller = new ProductController($request, $template, $serviceManager->get(IProductRepository::class));
     return $controller->view();
-});
-
-$router->addRoute('product_delete', '/product/delete', function ($request, $template) use ($serviceManager) {
-    $controller = new ProductController($request, $template, $serviceManager->get(IProductRepository::class));
-    return $controller->view();
-});
+}, ['POST'], ['tokens' => ['id' => '\d+']]);
 
 $router->addRoute('product_update', '/product/update', function ($request, $template) use ($serviceManager) {
-    $controller = new ProductController($request, $template, $serviceManager->get(IProductRepository::class));
-    return $controller->view();
-});
-
-$router->addRoute('product_create', '/product/create', function ($request, $template) use ($serviceManager) {
     $controller = new ProductController($request, $template, $serviceManager->get(IProductRepository::class));
     return $controller->view();
 });

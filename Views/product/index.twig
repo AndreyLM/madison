@@ -10,25 +10,17 @@
 {% block pageTitle %} Products {% endblock %}
 
 {% block breadcrumbs %}
-    <li><a href="#">Home</a></li>
+    <li><a href="{{ path('home') }}">Home</a></li>
     <li class="active">Products</li>
 {% endblock %}
 
 
 {% block content %}
-    {% include 'product/data_table.twig' %}
-    {% for product in products %}
-        <p>{{ product.name }}</p>
+    {% include 'product/data_table.twig'  with {'products' : products} %}
 
-    {% endfor %}
 {% endblock %}
 
 {% block scripts %}
-    <script src="src/assets/js/vendor/jquery-2.1.4.min.js"></script>
-    <script src="src/assets/js/popper.min.js"></script>
-    <script src="src/assets/js/plugins.js"></script>
-    <script src="src/assets/js/main.js"></script>
-
 
     <script src="src/assets/js/lib/data-table/datatables.min.js"></script>
     <script src="src/assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>

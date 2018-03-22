@@ -33,11 +33,19 @@ class ProductController extends BaseController
 
     public function view()
     {
-        return $this->renderHtml('product/view');
+        $id = $this->request->getAttribute('id');
+
+
+        return $this->renderHtml('product/view', [
+            'product' => $this->repository->getById($id)]);
     }
 
     public function create()
     {
+        if($this->request->getMethod() === 'POST') {
+
+        }
+
         return $this->renderHtml('product/create');
     }
 

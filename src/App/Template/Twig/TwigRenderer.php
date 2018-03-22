@@ -23,6 +23,8 @@ class TwigRenderer implements ITemplateRenderer
 
     public function render($name, array $params)
     {
-        return $this->environment->render($name.'.'.$this->twig, $params);
+        return $this->environment->render($name.'.'.$this->twig,
+            array_merge_recursive($params, ['baseUrl' => '/madison/public']));
     }
+
 }

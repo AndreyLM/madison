@@ -23,16 +23,16 @@ class DummyProductRepository implements IProductRepository
     public function getAll()
     {
         $products = [];
-        $product1 = new Product(1, 'Uniform 1', 30, 1000);
+        $product1 = new Product(1, 'Uniform 1', 30, 4000);
         $product1->addPrice(new Price(1, 1200, time()-365*2*24*3600, time()-365*24*3600));
         $product1->addPrice(new Price(2, 1400, time()-365*3*24*3600, time()-365*2*3600));
         $product1->addPrice(new Price(3, 800, time()-365*24*3600, time()));
-        $product1->addPrice(new Price(4, 600, time(), time()+24*3600));
-        $product1->addPrice(new Price(5, 1500, time(), time()+2*24*3600));
+        $product1->addPrice(new Price(4, 600, time()-3600, time()+24*3600));
+        $product1->addPrice(new Price(5, 1500, time()-3600, time()+2*24*3600));
         $products[] = $product1;
 
 
-        $product2 = new Product(2, 'Uniform 1', 30, 1000);
+        $product2 = new Product(2, 'Uniform 2', 30, 2000);
         $product2->addPrice(new Price(6, 1200, time()-365*2*24*3600, time()-365*24*3600));
         $product2->addPrice(new Price(7, 1400, time()-365*3*24*3600, time()-365*2*3600));
         $product2->addPrice(new Price(8, 800, time()-365*24*3600, time()));
@@ -40,7 +40,7 @@ class DummyProductRepository implements IProductRepository
         $product2->addPrice(new Price(10, 1500, time(), time()+2*24*3600));
         $products[] = $product2;
 
-        $product3 = new Product(3, 'Uniform 1', 30, 1000);
+        $product3 = new Product(3, 'Uniform 3', 30, 1200);
         $product3->addPrice(new Price(11, 1200, time()-365*2*24*3600, time()-365*24*3600));
         $product3->addPrice(new Price(12, 1400, time()-365*3*24*3600, time()-365*2*3600));
         $product3->addPrice(new Price(13, 800, time()-365*24*3600, time()));
@@ -88,12 +88,12 @@ class DummyProductRepository implements IProductRepository
         if($id != 5)
             throw new ModelNotFoundException('Can not product with id='.$id);
 
-        $product1 = new Product(5, 'Uniform 1', 30, 1000);
+        $product1 = new Product(1, 'Uniform 1', 30, 4000);
         $product1->addPrice(new Price(1, 1200, time()-365*2*24*3600, time()-365*24*3600));
         $product1->addPrice(new Price(2, 1400, time()-365*3*24*3600, time()-365*2*3600));
         $product1->addPrice(new Price(3, 800, time()-365*24*3600, time()));
-        $product1->addPrice(new Price(4, 600, time(), time()+24*3600));
-        $product1->addPrice(new Price(5, 1500, time(), time()+2*24*3600));
+        $product1->addPrice(new Price(4, 600, time()-24*3600, time()+24*3600));
+        $product1->addPrice(new Price(5, 1500, time()-24*3600, time()+2*24*3600));
 
         return $product1;
     }

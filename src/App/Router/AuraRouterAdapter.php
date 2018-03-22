@@ -79,8 +79,6 @@ class AuraRouterAdapter implements IRouter
         $route->handler($handler);
 
 
-
-
         foreach ($options as $name => $value) {
             switch ($name) {
                 case 'tokens':

@@ -1,16 +1,70 @@
 {% extends 'layouts/main.twig' %}
 
-{% block title %}{{ parent() }} - Products {% endblock %}
+{% block title %}{{ parent() }} - {{ product.name }} {% endblock %}
 {% block meta_description %}{% endblock %}
 {% block meta_keywords %}{% endblock %}
-{% block pageTitle %} Products {% endblock %}
+
+
+{% block pageTitle %} {{ product.name }} {% endblock %}
 
 {% block breadcrumbs %}
-    <li><a href="#">Home</a></li>
-    <li class="active">Products</li>
+    <li><a href="{{ path('home') }}">Home</a></li>
+    <li><a href="{{ path('products') }}">Products</a></li>
+    <li class="active">{{ product.name }}</li>
 {% endblock %}
 
 
 {% block content %}
-    <p>Index content</p>
+      <div class="row">
+          <div class="col-sm-3"><p>ID:</p></div>
+          <div class="col-sm-9">{{ product.id }}</div>
+      </div>
+      <div class="row">
+          <div class="col-sm-3"><p>Name:</p></div>
+          <div class="col-sm-9">{{ product.name }}</div>
+      </div>
+      <div class="row">
+          <div class="col-sm-3"><p>Default price:</p></div>
+          <div class="col-sm-9">{{ product.defaultPrice }} UAH</div>
+      </div>
+      <div class="row">
+          <div class="col-sm-3"><p>Discount:</p></div>
+          <div class="col-sm-9">{{ product.discount }}%</div>
+      </div>
+      <div class="row">
+          <div class="col-sm-3"><p>Current price:</p></div>
+          <div class="col-sm-9">{{ product.getCurrentPrice() }} UAH</div>
+      </div>
+
+      <div class="row">
+          <div class="col-sm-3"><p>Price with discount:</p></div>
+          <div class="col-sm-9">{{ product.getCurrentPrice()*(1-product.discount/100) }} UAH</div>
+      </div>
+
+    <div class="card">
+        <div class="card-header">
+            <strong class="card-title">Additional Prices</strong>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Value</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">Expiration Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for price in product.getAdditionalPrices() %}
+                <tr>
+                    <td>{{ price.value }} UAH</td>
+                    <td>{{ price.startDate | date('d/m/Y') }}</td>
+                    <td>{{ price.expirationDate | date('d/m/Y') }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}
+
