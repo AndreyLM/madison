@@ -56,4 +56,9 @@ class Product
         return true;
     }
 
+    public function clearPrices()
+    {
+        $this->prices = [];
+    }
+
 }

@@ -73,11 +73,12 @@ class DummyProductRepository implements IProductRepository
     }
 
     /**
+     * @param $id int
      * @return bool
      */
-    public function delete(): bool
+    public function delete($id): bool
     {
-        // TODO: Implement delete() method.
+        return true;
     }
 
     /**

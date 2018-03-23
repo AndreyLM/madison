@@ -47,7 +47,9 @@ class RouterMiddleware implements MiddlewareInterface
             return $action($request, $this->templateRenderer);
 
         } catch (RequestNotMatchedException $e) {
-            return new HtmlResponse('Undefined page 2', 404);
+            return new HtmlResponse($this->templateRenderer->render('error/404', [
+                'request' => $request,
+            ]), 404);
         }
     }
 

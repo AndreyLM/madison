@@ -24,9 +24,10 @@ interface IProductRepository
 
 
     /* @return bool
+     * @param $id int
      * @throws ModelRuntimeException
      */
-    public function delete() : bool;
+    public function delete($id) : bool;
 
 
 }
