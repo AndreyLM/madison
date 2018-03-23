@@ -18,7 +18,6 @@ use Models\Exceptions\ModelNotFoundException;
 use Models\Exceptions\ModelRuntimeException;
 use Models\Repositories\IProductRepository;
 use Psr\Http\Message\ServerRequestInterface;
-use Zend\Diactoros\Response;
 
 class ProductController extends BaseController
 {

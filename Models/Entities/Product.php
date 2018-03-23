@@ -1,23 +1,33 @@
 <?php
 namespace Models\Entities;
 
+use Models\Entities\PriceStrategy\IPriceStrategy;
+
 class Product
 {
+    const PRICE_SHORTEST = 'shortest';
+    const PRICE_LATEST = 'latest';
+
     public $id;
     public $name;
     public $discount;
     public $defaultPrice;
+    public $priceStrategy;
 
 
     /* @var Price[]*/
     private $prices = [];
 
-    public function __construct($id = null, $name = '', $discount = 0, $defaultPrice = 0)
+    /* @var IPriceStrategy[] */
+    private $priceStrategies = [];
+
+    public function __construct($id = null, $name = '', $discount = 0, $defaultPrice = 0, $priceStrategy)
     {
         $this->id = $id;
         $this->name = $name;
         $this->defaultPrice = $defaultPrice;
         $this->discount = $discount;
+        $this->priceStrategy = $priceStrategy;
     }
 
     public function getAdditionalPrices(){
@@ -29,31 +39,33 @@ class Product
         $this->prices[] = $price;
     }
 
-    public function getCurrentPrice() : int
+    public function getCurrentPrice($priceStrategyKey = '') : int
     {
-        $currentPrice = $this->defaultPrice;
-        $today = time();
-        $expiration = time();
+        $priceStrategyKey === '' ? $key = $this->priceStrategy : $key = $priceStrategyKey;
 
-        foreach($this->prices as $price) {
-            if($today<$price->startDate || $today>$price->expirationDate) {
-                continue;
-            }
+        $priceStrategy = $this->priceStrategies[$key];
 
-            $priceInterval = $price->expirationDate-$price->startDate;
+        return $priceStrategy->getCurrentPrice($this->defaultPrice, $this->prices, time());
+    }
 
-            if($priceInterval < $expiration) {
-                $currentPrice = $price->value;
-                $expiration = $priceInterval;
-            }
-        }
+    public function getDynamicPriceChanging($priceStrategyKey = '') : array
+    {
+        $priceStrategyKey === '' ? $key = $this->priceStrategy : $key = $priceStrategyKey;
 
-        return $currentPrice;
+        $priceStrategy = $this->priceStrategies[$key];
+
+        return $priceStrategy->getDynamicPriceChanging($this->defaultPrice, $this->prices);
     }
 
     public function validate() : bool
     {
         return true;
+    }
+
+    public function addPriceStrategy($key, IPriceStrategy $priceStrategy)
+    {
+
+        $this->priceStrategies[$key] = $priceStrategy;
     }
 
     public function clearPrices()
