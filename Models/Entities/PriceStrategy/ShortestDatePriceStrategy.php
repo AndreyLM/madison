@@ -17,12 +17,12 @@ class ShortestDatePriceStrategy implements IPriceStrategy
 
         $dateIntervals = $this->makeDateIntervals($prices);
 
-        for ($i = 0; $i<count($dateIntervals)-2; $i++) {
+        for ($i = 0; $i<count($dateIntervals)-1; $i++) {
             $startDate = $dateIntervals[$i];
             $endDate = $dateIntervals[$i+1];
             $value = $this->getCurrentPrice($defaultPrice, $prices, ($endDate+$startDate)/2);
 
-            $result[] = new Price($i, $value, $startDate, $endDate);
+            $result[] = new Price($i+1, $value, $startDate, $endDate);
         }
 
         return $result;
@@ -46,6 +46,28 @@ class ShortestDatePriceStrategy implements IPriceStrategy
         }
 
         return $dates;
+    }
+
+    public function normalizeIntervals($prices) : array
+    {
+        $result = [];
+        $value = $prices[0]->value;
+        $startDate = $prices[0]->startDate;
+        $expirationDate = $prices[0]->expirationDate;
+        $next = false;
+        $latestPrice = null;
+
+        /* @var $prices Price[] */
+        for($i=1; $i<count($prices)-1; $i++)
+        {
+            if($prices[$i]->value == $value) {
+               $latestPrice = $prices[$i];
+               $next = true;
+            }
+
+        }
+
+        return $result;
     }
 
     /**

@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f550e41-ab99-4600-bc5c-115ddb34b884" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controllers/ProductController.php" afterPath="$PROJECT_DIR$/Controllers/ProductController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/Entities/Product.php" afterPath="$PROJECT_DIR$/Models/Entities/Product.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/Repositories/DummyProductRepository.php" afterPath="$PROJECT_DIR$/Models/Repositories/DummyProductRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/layouts/main.twig" afterPath="$PROJECT_DIR$/Views/layouts/main.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/product/view.twig" afterPath="$PROJECT_DIR$/Views/product/view.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/Entities/PriceStrategy/ShortestDatePriceStrategy.php" afterPath="$PROJECT_DIR$/Models/Entities/PriceStrategy/ShortestDatePriceStrategy.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,8 +36,8 @@
       <file leaf-file-name="ShortestDatePriceStrategy.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Models/Entities/PriceStrategy/ShortestDatePriceStrategy.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="17" column="59" lean-forward="true" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
+            <state relative-caret-position="282">
+              <caret line="63" column="42" lean-forward="false" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -328,12 +323,12 @@
       <workItem from="1519366141645" duration="980000" />
       <workItem from="1521577488225" duration="8904000" />
       <workItem from="1521613963457" duration="20340000" />
-      <workItem from="1521748340894" duration="29038000" />
+      <workItem from="1521748340894" duration="31728000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114307000" />
+    <option name="totallyTimeSpent" value="116997000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -768,8 +763,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Models/Entities/PriceStrategy/ShortestDatePriceStrategy.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="17" column="59" lean-forward="true" selection-start-line="17" selection-start-column="59" selection-end-line="17" selection-end-column="59" />
+        <state relative-caret-position="282">
+          <caret line="63" column="42" lean-forward="false" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
           <folding />
         </state>
       </provider>
