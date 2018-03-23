@@ -15,6 +15,13 @@
 
 
 {% block content %}
+        <div class="row">
+            <div class="col-sm-12">
+                <a class="btn btn-danger btn-" href="{{ path('product_delete', { 'id' : product.id }) }}">Delete</a>
+                <a class="btn btn-info" href="{{ path('product_update', { 'id' : product.id }) }}">Update</a>
+            </div>
+        </div>
+    <hr>
       <div class="row">
           <div class="col-sm-3"><p>ID:</p></div>
           <div class="col-sm-9">{{ product.id }}</div>

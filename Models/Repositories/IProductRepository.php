@@ -17,14 +17,11 @@ interface IProductRepository
     public function getById($id) : Product;
 
     /* @return Product
+     * @param $product Product
      * @throws ModelRuntimeException
      */
-    public function create() : Product;
+    public function save(Product $product) : Product;
 
-    /* @return Product
-     * @throws ModelRuntimeException
-     */
-    public function edit() : Product;
 
     /* @return bool
      * @throws ModelRuntimeException

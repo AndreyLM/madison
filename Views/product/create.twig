@@ -18,24 +18,90 @@
             <strong>Create Product</strong>
         </div>
         <div class="card-body card-block">
-            <form action="" method="post" class="form-horizontal">
+            <form action="{{ path('product_create') }}" method="post" class="form-horizontal">
+
                 <div class="row form-group">
-                    <div class="col col-md-3"><label for="hf-email" class=" form-control-label">Email</label></div>
-                    <div class="col-12 col-md-9"><input id="hf-email" name="hf-email" placeholder="Enter Email..." class="form-control" type="email"><span class="help-block">Please enter your email</span></div>
+                    <div class="col col-md-3">
+                        <label for="product-name" class=" form-control-label" >Name</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input id="product-name" name="product-name"
+                               placeholder="Enter product name..." class="form-control" type="text" required>
+                        <span class="help-block">Please enter product name</span>
+                    </div>
                 </div>
+
                 <div class="row form-group">
-                    <div class="col col-md-3"><label for="hf-password" class=" form-control-label">Password</label></div>
-                    <div class="col-12 col-md-9"><input id="hf-password" name="hf-password" placeholder="Enter Password..." class="form-control" type="password"><span class="help-block">Please enter your password</span></div>
+                    <div class="col col-md-3">
+                        <label for="product-default-price" class=" form-control-label" required>Default Price</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input id="product-default-price" name="product-default-price" placeholder="Enter default price..." class="form-control" type="number">
+                        <span class="help-block">Please enter default price</span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="product-discount" class=" form-control-label">Discount</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <input id="product-discount" name="product-discount" placeholder="Enter discount..." class="form-control" type="number">
+                        <span class="help-block">Please enter discount</span>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-header">
+                        <strong class="card-title">Additional Prices</strong>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Value</th>
+                                <th scope="col">Start Date</th>
+                                <th scope="col">Expiration Date</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody id="add-price-tbody">
+                            <tr class="price-tr" hidden>
+                                <td>
+                                    <input name="price[value][]" class="form-control" type="number">
+                                </td>
+                                <td>
+                                    <input name="price[start-date][]" class="form-control" type="date">
+                                </td>
+                                <td>
+                                    <input name="price[expiration-date][]" class="form-control" type="date">
+                                </td>
+                                <td>
+                                    <a href="#" class="delete-add-price"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <a id="add-price" href="#"><i class="fa fa-plus fa-2x"></i> </a>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Submit
+                    </button>
+                    <button type="reset" class="btn btn-danger btn-sm">
+                        <i class="fa fa-ban"></i> Reset
+                    </button>
                 </div>
             </form>
         </div>
-        <div class="card-footer">
-            <button type="submit" class="btn btn-primary btn-sm">
-                <i class="fa fa-dot-circle-o"></i> Submit
-            </button>
-            <button type="reset" class="btn btn-danger btn-sm">
-                <i class="fa fa-ban"></i> Reset
-            </button>
-        </div>
+
     </div>
+
+
+
+
+
 {% endblock %}

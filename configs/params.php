@@ -3,7 +3,7 @@
 use App\Template\Twig\TwigRouteExtension;
 
 return [
-    'debug' => true,
+    'debug' => false,
     'basePath' => '/madison/public',
     'template' => 'twig',
     'twig' => [

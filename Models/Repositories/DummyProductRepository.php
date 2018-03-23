@@ -55,19 +55,21 @@ class DummyProductRepository implements IProductRepository
 
 
     /**
+     * @param $product Product
      * @return Product
      */
-    public function create(): Product
+    public function save(Product $product): Product
     {
-        // TODO: Implement create() method.
+        return $this->getById(5);
     }
 
     /**
+     * @param $product Product
      * @return Product
      */
-    public function edit(): Product
+    public function edit(Product $product): Product
     {
-        // TODO: Implement edit() method.
+        return $this->getById(5);
     }
 
     /**
@@ -88,7 +90,7 @@ class DummyProductRepository implements IProductRepository
         if($id != 5)
             throw new ModelNotFoundException('Can not product with id='.$id);
 
-        $product1 = new Product(1, 'Uniform 1', 30, 4000);
+        $product1 = new Product(5, 'Uniform 1', 30, 4000);
         $product1->addPrice(new Price(1, 1200, time()-365*2*24*3600, time()-365*24*3600));
         $product1->addPrice(new Price(2, 1400, time()-365*3*24*3600, time()-365*2*3600));
         $product1->addPrice(new Price(3, 800, time()-365*24*3600, time()));

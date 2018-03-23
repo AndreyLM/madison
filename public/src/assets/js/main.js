@@ -27,6 +27,23 @@ jQuery(document).ready(function($) {
 		$('.search-trigger').parent('.header-left').removeClass('open');
 	});
 
+	$('#add-price').on('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        $('.price-tr[hidden]')
+			.first()
+			.clone()
+			.removeAttr('hidden')
+			.appendTo('#add-price-tbody');
+
+    });
+
+	$('#add-price-tbody').on('click', '.delete-add-price', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $(e.target).closest('tr').remove();
+
+    })
 	// $('.user-area> a').on('click', function(event) {
 	// 	event.preventDefault();
 	// 	event.stopPropagation();

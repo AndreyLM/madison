@@ -19,7 +19,7 @@ $router->addRoute('product', '/product/{id}', function ($request, $template) use
 $router->addRoute('product_create', '/product/create', function ($request, $template) use ($serviceManager) {
     $controller = new ProductController($request, $template, $serviceManager->get(IProductRepository::class));
     return $controller->create();
-});
+}, ['GET', 'POST']);
 
 $router->addRoute('home', '/', function ($request, $template) {
     $controller = new DefaultController($request, $template);

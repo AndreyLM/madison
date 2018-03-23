@@ -23,8 +23,8 @@
                             <tr>
                                 <td>{{ product.id }}</td>
                                 <td>{{ product.name }}</td>
-                                <td>{{ product.discount }}</td>
-                                <td>{{ product.defaultPrice }}</td>
+                                <td>{{ product.discount }} %</td>
+                                <td>{{ product.defaultPrice }} UAH</td>
                                 <td>
                                     <a href="{{ path('product_delete', { 'id' : product.id }) }}"><i class="fa fa-trash"></i></a>
                                     <a href="{{ path('product', { 'id' : product.id }) }}"><i class="fa fa-eye"></i></a>

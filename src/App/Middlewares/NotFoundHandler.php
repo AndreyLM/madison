@@ -22,8 +22,6 @@ class NotFoundHandler implements RequestHandlerInterface
      */
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        echo 'die;';
-        die;
         return new HtmlResponse('Undefined page', 404);
     }
 

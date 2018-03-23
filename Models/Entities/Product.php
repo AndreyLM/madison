@@ -7,12 +7,12 @@ class Product
     public $name;
     public $discount;
     public $defaultPrice;
-    public $exp;
+
 
     /* @var Price[]*/
     private $prices = [];
 
-    public function __construct($id, $name, $discount, $defaultPrice)
+    public function __construct($id = null, $name = '', $discount = 0, $defaultPrice = 0)
     {
         $this->id = $id;
         $this->name = $name;
@@ -29,7 +29,7 @@ class Product
         $this->prices[] = $price;
     }
 
-    public function getCurrentPrice()
+    public function getCurrentPrice() : int
     {
         $currentPrice = $this->defaultPrice;
         $today = time();
@@ -49,6 +49,11 @@ class Product
         }
 
         return $currentPrice;
+    }
+
+    public function validate() : bool
+    {
+        return true;
     }
 
 }
