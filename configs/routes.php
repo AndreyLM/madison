@@ -21,6 +21,11 @@ $router->addRoute('configs_create_tables', '/config/create/tables', function ($r
     return $controller->createTables();
 });
 
+$router->addRoute('configs_remove_tables', '/config/remove/tables', function ($request, $template)use ($serviceManager){
+    $controller = new ConfigController($request, $template, $serviceManager);
+    return $controller->removeTables();
+});
+
 $router->addRoute('product', '/product/{id}', function ($request, $template) use ($serviceManager) {
     $controller = new ProductController($request, $template, $serviceManager->get(IProductRepository::class));
     return $controller->view();

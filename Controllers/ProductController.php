@@ -99,8 +99,8 @@ class ProductController extends BaseController
             $this->addPrices($model);
 
             if($model->validate()) {
-                $newProduct = $this->repository->save($model);
-                $this->request = $this->request->withAttribute('id', $newProduct->id);
+                $id = $this->repository->save($model);
+                $this->request = $this->request->withAttribute('id', $id);
                 return $this->view();
 
             }
@@ -138,17 +138,17 @@ class ProductController extends BaseController
         /* First price in form used as template and is empty */
         $prices = $this->request->getParsedBody()['price'];
 
-        $count = count($prices['value'])-1;
+
+        $count = count($prices['value']);
 
         for($i=1; $i<$count; $i++) {
             $product->addPrice(new Price(
                 null,
                 $prices['value'][$i],
-                $prices['start-date'][$i],
-                $prices['expiration-date'][$i]
+                strtotime($prices['start-date'][$i]),
+                strtotime($prices['expiration-date'][$i])
             ));
         }
-
 
     }
 

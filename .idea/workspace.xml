@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f550e41-ab99-4600-bc5c-115ddb34b884" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Models/Entities/PriceStrategy/IPriceStrategy.php" afterPath="$PROJECT_DIR$/Models/Entities/PriceStrategy/PriceStrategy.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controllers/ConfigController.php" afterPath="$PROJECT_DIR$/Controllers/ConfigController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controllers/ProductController.php" afterPath="$PROJECT_DIR$/Controllers/ProductController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/Entities/Price.php" afterPath="$PROJECT_DIR$/Models/Entities/Price.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/Entities/PriceStrategy/LatestDatePriceStrategy.php" afterPath="$PROJECT_DIR$/Models/Entities/PriceStrategy/LatestDatePriceStrategy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/Entities/PriceStrategy/ShortestDatePriceStrategy.php" afterPath="$PROJECT_DIR$/Models/Entities/PriceStrategy/ShortestDatePriceStrategy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/Entities/Product.php" afterPath="$PROJECT_DIR$/Models/Entities/Product.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/Repositories/DummyProductRepository.php" afterPath="$PROJECT_DIR$/Models/Repositories/DummyProductRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/partials/head.twig" afterPath="$PROJECT_DIR$/Views/partials/head.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/Repositories/IProductRepository.php" afterPath="$PROJECT_DIR$/Models/Repositories/IProductRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/Repositories/PDOProductRepository.php" afterPath="$PROJECT_DIR$/Models/Repositories/PDOProductRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/partials/leftpanel.twig" afterPath="$PROJECT_DIR$/Views/partials/leftpanel.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/product/view.twig" afterPath="$PROJECT_DIR$/Views/product/view.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configs/dependencies.php" afterPath="$PROJECT_DIR$/configs/dependencies.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configs/params.php" afterPath="$PROJECT_DIR$/configs/params.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configs/routes.php" afterPath="$PROJECT_DIR$/configs/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/Template/Twig/TwigRenderer.php" afterPath="$PROJECT_DIR$/src/App/Template/Twig/TwigRenderer.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,13 +22,60 @@
       <file leaf-file-name="PDOProductRepository.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Models/Repositories/PDOProductRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="52" column="36" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
+            <state relative-caret-position="448">
+              <caret line="60" column="36" lean-forward="false" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
               <folding>
-                <element signature="e#120#148#0#PHP" expanded="true" />
-                <marker date="1521958143187" expanded="true" signature="642:664" ph="SELECT * FRO... products" />
-                <marker date="1521958143187" expanded="true" signature="921:956" ph="SELECT * FRO... products" />
+                <element signature="e#120#146#0#PHP" expanded="true" />
+                <marker date="1521988674044" expanded="true" signature="687:897" ph="SELECT * FRO... products" />
+                <marker date="1521988674044" expanded="true" signature="687:949" ph="SELECT produ... " />
+                <marker date="1521988674044" expanded="true" signature="1210:1494" ph="SELECT * FRO... products" />
+                <marker date="1521988674044" expanded="true" signature="2022:2052" ph="DELETE FROM " />
+                <marker date="1521988674044" expanded="true" signature="2022:2055" ph="DELETE FROM " />
+                <marker date="1521988674044" expanded="true" signature="2336:2434" ph="INSERT INTO MyGuests... " />
+                <marker date="1521988674044" expanded="true" signature="2714:2812" ph="INSERT INTO products... " />
+                <marker date="1521988674044" expanded="true" signature="3369:3512" ph="INSERT INTO prices... " />
+                <marker date="1521988674044" expanded="true" signature="3513:3580" ph="INSERT INTO prices... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controllers/ProductController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1708">
+              <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="date.php" pinned="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5415">
+              <caret line="794" column="9" lean-forward="false" selection-start-line="794" selection-start-column="9" selection-end-line="794" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Price.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/Entities/Price.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Product.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/Entities/Product.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="29" column="46" lean-forward="true" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -44,81 +83,31 @@
       <file leaf-file-name="ConfigController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controllers/ConfigController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="40" column="0" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="286">
+              <caret line="67" column="18" lean-forward="true" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
               <folding>
                 <element signature="e#112#146#0#PHP" expanded="true" />
-                <marker date="1521917064395" expanded="true" signature="1078:1364" ph="CREATE TABLE... departments" />
-                <marker date="1521917064395" expanded="true" signature="1431:1948" ph="CREATE TABLE... prices" />
+                <marker date="1521977213862" expanded="true" signature="852:1138" ph="CREATE TABLE... products" />
+                <marker date="1521977213862" expanded="true" signature="1202:1722" ph="CREATE TABLE... prices" />
+                <marker date="1521977213862" expanded="true" signature="2533:2551" ph="DROP TABLE p... " />
+                <marker date="1521977213862" expanded="true" signature="2729:2749" ph="DROP TABLE p... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ITemplateRenderer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App/Template/ITemplateRenderer.php">
+      <file leaf-file-name="PDO.php" pinned="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/PDO/PDO.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+            <state relative-caret-position="1878">
+              <caret line="1291" column="20" lean-forward="false" selection-start-line="1291" selection-start-column="20" selection-end-line="1291" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TwigRenderer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App/Template/Twig/TwigRenderer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dependencies.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/configs/dependencies.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-              <folding>
-                <element signature="e#8#28#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="params.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/configs/params.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="20" lean-forward="true" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="leftpanel.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Views/partials/leftpanel.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/configs/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="21" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_tables.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Views/config/create_tables.twig">
+      <file leaf-file-name="remove_tables.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/config/remove_tables.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
               <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
@@ -127,11 +116,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Views/index.twig">
+      <file leaf-file-name="ModelRuntimeException.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/Exceptions/ModelRuntimeException.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="14" />
+            <state relative-caret-position="144">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="leftpanel.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/partials/leftpanel.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="34" column="181" lean-forward="false" selection-start-line="34" selection-start-column="181" selection-end-line="34" selection-end-column="181" />
               <folding />
             </state>
           </provider>
@@ -145,7 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/App/Middlewares/ResolverMiddleware.php" />
         <option value="$PROJECT_DIR$/configs/ServiceManager.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/App/Template/Twig/TwigRouteExtension.php" />
@@ -157,7 +155,6 @@
         <option value="$PROJECT_DIR$/Views/partials/rightpanel.twig" />
         <option value="$PROJECT_DIR$/Views/partials/header.twig" />
         <option value="$PROJECT_DIR$/Models/Exceptions/ModelNotFoundException.php" />
-        <option value="$PROJECT_DIR$/Models/Exceptions/ModelRuntimeException.php" />
         <option value="$PROJECT_DIR$/Controllers/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/App/Controller/BaseController.php" />
         <option value="$PROJECT_DIR$/Views/product/index.twig" />
@@ -176,7 +173,6 @@
         <option value="$PROJECT_DIR$/Views/product/create.twig" />
         <option value="$PROJECT_DIR$/Views/product/product_form.twig" />
         <option value="$PROJECT_DIR$/Views/product/update.twig" />
-        <option value="$PROJECT_DIR$/Models/Repositories/IProductRepository.php" />
         <option value="$PROJECT_DIR$/Views/layouts/main.twig" />
         <option value="$PROJECT_DIR$/Models/Entities/Product.php" />
         <option value="$PROJECT_DIR$/Models/Entities/PriceStrategy/IPriceStrategy.php" />
@@ -185,16 +181,19 @@
         <option value="$PROJECT_DIR$/Models/Repositories/DummyProductRepository.php" />
         <option value="$PROJECT_DIR$/Models/Entities/Price.php" />
         <option value="$PROJECT_DIR$/Models/Entities/PriceStrategy/LatestDatePriceStrategy.php" />
-        <option value="$PROJECT_DIR$/Controllers/ProductController.php" />
         <option value="$PROJECT_DIR$/Views/partials/head.twig" />
         <option value="$PROJECT_DIR$/Views/product/view.twig" />
         <option value="$PROJECT_DIR$/Views/config/create_tables.twig" />
-        <option value="$PROJECT_DIR$/configs/routes.php" />
-        <option value="$PROJECT_DIR$/Views/partials/leftpanel.twig" />
-        <option value="$PROJECT_DIR$/Controllers/ConfigController.php" />
         <option value="$PROJECT_DIR$/src/App/Template/Twig/TwigRenderer.php" />
         <option value="$PROJECT_DIR$/configs/params.php" />
         <option value="$PROJECT_DIR$/configs/dependencies.php" />
+        <option value="$PROJECT_DIR$/Models/Repositories/IProductRepository.php" />
+        <option value="$PROJECT_DIR$/Views/config/remove_tables.twig" />
+        <option value="$PROJECT_DIR$/configs/routes.php" />
+        <option value="$PROJECT_DIR$/Views/partials/leftpanel.twig" />
+        <option value="$PROJECT_DIR$/Models/Exceptions/ModelRuntimeException.php" />
+        <option value="$PROJECT_DIR$/Controllers/ConfigController.php" />
+        <option value="$PROJECT_DIR$/Controllers/ProductController.php" />
         <option value="$PROJECT_DIR$/Models/Repositories/PDOProductRepository.php" />
       </list>
     </option>
@@ -237,7 +236,24 @@
             <path>
               <item name="madison" type="b2602c69:ProjectViewProjectNode" />
               <item name="madison" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="configs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="madison" type="b2602c69:ProjectViewProjectNode" />
+              <item name="madison" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="madison" type="b2602c69:ProjectViewProjectNode" />
+              <item name="madison" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="layouts" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="madison" type="b2602c69:ProjectViewProjectNode" />
+              <item name="madison" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="partials" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -252,19 +268,19 @@
     <property name="php.override.implement.member.chooser.php.doc" value="DEFAULT" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Views/error" />
-      <recent name="$PROJECT_DIR$/Views" />
-      <recent name="$PROJECT_DIR$/Views/partials" />
-      <recent name="$PROJECT_DIR$/Views/src" />
-      <recent name="$PROJECT_DIR$/src/App/Template/Twig" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Views/config" />
       <recent name="$PROJECT_DIR$/Views/product" />
       <recent name="$PROJECT_DIR$/Views" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/Views/src" />
-      <recent name="$PROJECT_DIR$/src/Framework/Http/Router" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Views" />
+      <recent name="$PROJECT_DIR$/Views/error" />
+      <recent name="$PROJECT_DIR$/Views/partials" />
+      <recent name="$PROJECT_DIR$/Views/src" />
+      <recent name="$PROJECT_DIR$/src/App/Template/Twig" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -309,12 +325,12 @@
       <workItem from="1521613963457" duration="20340000" />
       <workItem from="1521748340894" duration="31728000" />
       <workItem from="1521949069576" duration="1996000" />
-      <workItem from="1521956779873" duration="1019000" />
+      <workItem from="1521956779873" duration="12404000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140293000" />
+    <option name="totallyTimeSpent" value="151678000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-150" y="169" width="1301" height="744" extended-state="6" />
@@ -381,28 +397,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Views/partials/rightpanel.twig" />
-    <entry file="file://$PROJECT_DIR$/Models/Exceptions/ModelNotFoundException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/Exceptions/ModelRuntimeException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="11" column="46" lean-forward="false" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="794" column="9" lean-forward="false" selection-start-line="794" selection-start-column="9" selection-end-line="794" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/aura/router/src/Matcher.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1944">
@@ -436,6 +430,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="487">
           <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#33#68#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -552,13 +549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Models/Repositories/IProductRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/product/index.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -608,13 +598,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/layouts/main.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-diactoros/src/Response/JsonResponse.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -629,13 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/ProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="82" column="39" lean-forward="false" selection-start-line="82" selection-start-column="39" selection-end-line="82" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/partials/head.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -643,48 +619,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Models/Entities/Product.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="14" column="26" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="14" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/Entities/Price.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/index.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/config/create_tables.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="21" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/partials/leftpanel.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -710,19 +648,7 @@
         <state relative-caret-position="504">
           <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
-            <element signature="e#8#28#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/ConfigController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="e#112#146#0#PHP" expanded="true" />
-            <marker date="1521917064395" expanded="true" signature="1078:1364" ph="CREATE TABLE... departments" />
-            <marker date="1521917064395" expanded="true" signature="1431:1948" ph="CREATE TABLE... prices" />
+            <element signature="e#8#28#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -735,14 +661,131 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Models/Repositories/IProductRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/config/create_tables.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/layouts/main.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/partials/leftpanel.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="34" column="181" lean-forward="false" selection-start-line="34" selection-start-column="181" selection-end-line="34" selection-end-column="181" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/PDO/PDO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1878">
+          <caret line="1291" column="20" lean-forward="false" selection-start-line="1291" selection-start-column="20" selection-end-line="1291" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/config/remove_tables.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/Exceptions/ModelRuntimeException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5415">
+          <caret line="794" column="9" lean-forward="false" selection-start-line="794" selection-start-column="9" selection-end-line="794" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/ConfigController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="67" column="18" lean-forward="true" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
+          <folding>
+            <element signature="e#112#146#0#PHP" expanded="true" />
+            <marker date="1521977213862" expanded="true" signature="852:1138" ph="CREATE TABLE... products" />
+            <marker date="1521977213862" expanded="true" signature="1202:1722" ph="CREATE TABLE... prices" />
+            <marker date="1521977213862" expanded="true" signature="2533:2551" ph="DROP TABLE p... " />
+            <marker date="1521977213862" expanded="true" signature="2729:2749" ph="DROP TABLE p... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1708">
+          <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/Entities/Price.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Models/Entities/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="29" column="46" lean-forward="true" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Models/Repositories/PDOProductRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="52" column="36" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
+        <state relative-caret-position="448">
+          <caret line="60" column="36" lean-forward="false" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
           <folding>
-            <element signature="e#120#148#0#PHP" expanded="true" />
-            <marker date="1521958143187" expanded="true" signature="642:664" ph="SELECT * FRO... products" />
-            <marker date="1521958143187" expanded="true" signature="921:956" ph="SELECT * FRO... products" />
+            <element signature="e#120#146#0#PHP" expanded="true" />
+            <marker date="1521988674044" expanded="true" signature="687:897" ph="SELECT * FRO... products" />
+            <marker date="1521988674044" expanded="true" signature="687:949" ph="SELECT produ... " />
+            <marker date="1521988674044" expanded="true" signature="1210:1494" ph="SELECT * FRO... products" />
+            <marker date="1521988674044" expanded="true" signature="2022:2052" ph="DELETE FROM " />
+            <marker date="1521988674044" expanded="true" signature="2022:2055" ph="DELETE FROM " />
+            <marker date="1521988674044" expanded="true" signature="2336:2434" ph="INSERT INTO MyGuests... " />
+            <marker date="1521988674044" expanded="true" signature="2714:2812" ph="INSERT INTO products... " />
+            <marker date="1521988674044" expanded="true" signature="3369:3512" ph="INSERT INTO prices... " />
+            <marker date="1521988674044" expanded="true" signature="3513:3580" ph="INSERT INTO prices... " />
           </folding>
         </state>
       </provider>

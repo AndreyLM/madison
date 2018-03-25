@@ -16,11 +16,11 @@ interface IProductRepository
     * @throws ModelNotFoundException*/
     public function getById($id) : Product;
 
-    /* @return Product
+    /* @return int
      * @param $product Product
      * @throws ModelRuntimeException
      */
-    public function save(Product $product) : Product;
+    public function save(Product $product) : int;
 
 
     /* @return bool

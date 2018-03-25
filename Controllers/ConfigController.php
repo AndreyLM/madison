@@ -11,6 +11,7 @@ namespace Controllers;
 
 use App\Controller\BaseController;
 use App\Template\ITemplateRenderer;
+use Models\Exceptions\ModelRuntimeException;
 use PDO;
 use PDOException;
 use Psr\Container\ContainerInterface;
@@ -25,25 +26,20 @@ class ConfigController extends BaseController
      */
     private $container;
 
+    /**
+     * @var PDO
+     * */
+    private $pdo;
+
     public function __construct(ServerRequestInterface $request, ITemplateRenderer $template, ContainerInterface $container)
     {
         parent::__construct($request, $template);
         $this->container = $container;
+        $this->init();
     }
 
     public function createTables(){
-        $connection = $this->container->get('config')['connection'];
-
-        $host = $connection['host'];
-        $username = $connection['user'];
-        $password = $connection['pass'];
-        $db = $connection['db'];
-
-        try{
-            $dsn = "mysql:host=$host;dbname=$db";
-            $dbh = new PDO($dsn, $username, $password);
-
-            $sql_create_prod_tbl = <<<EOSQL
+        $sql_create_prod_tbl = <<<EOSQL
             CREATE TABLE products(
               id int(11) NOT NULL AUTO_INCREMENT,
               name varchar(255) DEFAULT NULL,
@@ -51,13 +47,13 @@ class ConfigController extends BaseController
               default_price int(10),
               PRIMARY KEY (id),
               UNIQUE(name)
-            ) ENGINE=InnoDB
+            ) ENGINE=InnoDB 
 EOSQL;
 
-            $sql_create_prices_tbl = <<<EOSQL
+        $sql_create_prices_tbl = <<<EOSQL
             CREATE TABLE prices (
               id int(11) NOT NULL AUTO_INCREMENT,
-              value date NOT NULL,
+              value int(10) NOT NULL,
               start_date int(30) NOT NULL,
               expiration_date int(30) NOT NULL,
               product_id  int(11) NOT NULL,
@@ -69,13 +65,14 @@ EOSQL;
             ) ENGINE=InnoDB
 EOSQL;
 
-            $msg = '';
+        $msg = '';
 
-            $r = $dbh->exec($sql_create_prod_tbl);
+        try{
+            $r = $this->pdo->exec($sql_create_prod_tbl);
 
             if($r !== false){
 
-                $r = $dbh->exec($sql_create_prices_tbl);
+                $r = $this->pdo->exec($sql_create_prices_tbl);
 
                 if($r !== false){
                     $msg =  "Tables are created successfully!<br/>";
@@ -87,7 +84,6 @@ EOSQL;
                 $msg =  "Error creating the products table.<br/>";
             }
 
-            // display the message
             if($msg != '')
                 return $this->renderHtml('config/create_tables', [
                     'msg' => $msg
@@ -95,6 +91,39 @@ EOSQL;
 
         }catch (PDOException $e){
             throw $e;
+        }
+    }
+
+    public function removeTables()
+    {
+
+        $stmt = $this->pdo->prepare("DROP TABLE  prices ");
+
+        if (!$stmt->execute())
+            throw new ModelRuntimeException($stmt->errorCode(). ' Error while removing table prices');
+
+        $stmt = $this->pdo->prepare("DROP TABLE  products ");
+
+        if (!$stmt->execute())
+            throw new ModelRuntimeException($stmt->errorCode(). ' Error while removing table products');
+
+        return $this->renderHtml('config/remove_tables', ['msg' => 'Tables successfully removed']);
+    }
+
+    private function init()
+    {
+        $connection = $this->container->get('config')['connection'];
+
+        $host = $connection['host'];
+        $username = $connection['user'];
+        $password = $connection['pass'];
+        $db = $connection['db'];
+
+        try{
+            $dsn = "mysql:host=$host;dbname=$db";
+            $this->pdo = new PDO($dsn, $username, $password);
+        } catch (PDOException $exception) {
+            throw new ModelRuntimeException($exception->getMessage());
         }
     }
 }
