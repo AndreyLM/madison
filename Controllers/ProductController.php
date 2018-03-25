@@ -62,6 +62,8 @@ class ProductController extends BaseController
 
         $product = $this->getModel($id);
 
+
+
         return $this->saveProduct('product/update', $product);
     }
 

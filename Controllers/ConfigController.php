@@ -58,7 +58,7 @@ EOSQL;
               expiration_date int(30) NOT NULL,
               product_id  int(11) NOT NULL,
               PRIMARY KEY (id),
-              UNIQUE(start_date),
+              KEY(start_date),
               KEY prod_prices (product_id),
               CONSTRAINT prod_prices FOREIGN KEY (product_id)
               REFERENCES products (id) ON DELETE CASCADE ON UPDATE CASCADE 

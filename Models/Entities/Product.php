@@ -1,12 +1,14 @@
 <?php
 namespace Models\Entities;
 
+use Models\Entities\PriceStrategy\LatestDatePriceStrategy;
 use Models\Entities\PriceStrategy\PriceStrategy;
+use Models\Entities\PriceStrategy\ShortestDatePriceStrategy;
 
 class Product
 {
-    const PRICE_SHORTEST = 'shortest';
-    const PRICE_LATEST = 'latest';
+    const PRICE_SHORTEST = 'byDuration';
+    const PRICE_LATEST = 'byBeginning';
 
     public $id;
     public $name;
@@ -28,6 +30,9 @@ class Product
         $this->defaultPrice = $defaultPrice;
         $this->discount = $discount;
         $this->priceStrategy = $priceStrategy;
+
+        $this->addPriceStrategy(self::PRICE_SHORTEST, new ShortestDatePriceStrategy());
+        $this->addPriceStrategy(self::PRICE_LATEST, new LatestDatePriceStrategy());
     }
 
     public function getAdditionalPrices(){
@@ -39,18 +44,18 @@ class Product
         $this->prices[] = $price;
     }
 
-    public function getCurrentPrice($priceStrategyKey = '') : int
+    public function getCurrentPrice($priceStrategyKey = self::PRICE_SHORTEST) : int
     {
-        $priceStrategyKey === '' ? $key = $this->priceStrategy : $key = $priceStrategyKey;
+        $key = $priceStrategyKey;
 
         $priceStrategy = $this->priceStrategies[$key];
 
         return $priceStrategy->getCurrentPrice($this->defaultPrice, $this->prices, time());
     }
 
-    public function getDynamicPriceChanging($priceStrategyKey = '') : array
+    public function getDynamicPriceChanging($priceStrategyKey = self::PRICE_LATEST) : array
     {
-        $priceStrategyKey === '' ? $key = $this->priceStrategy : $key = $priceStrategyKey;
+        $key = $priceStrategyKey;
 
         $priceStrategy = $this->priceStrategies[$key];
 

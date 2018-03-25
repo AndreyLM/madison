@@ -17,22 +17,26 @@ abstract class PriceStrategy
 
     public function getDynamicPriceChanging($defaultPrice, $prices): array
     {
+
+
         $result = [];
 
         $dateIntervals = $this->makeDateIntervals($prices);
 
-        for ($i = 0; $i<count($dateIntervals)-1; $i++) {
+
+        for ($i = 0; $i<(count($dateIntervals)-1); $i++) {
             $startDate = $dateIntervals[$i];
             $endDate = $dateIntervals[$i+1];
             $value = $this->getCurrentPrice($defaultPrice, $prices, ($endDate+$startDate)/2);
 
             $result[] = new Price($i+1, $value, $startDate, $endDate);
+
         }
 
         return $this->normalizeIntervals($result);
     }
 
-    private function makeDateIntervals(array $prices)
+    protected function makeDateIntervals(array $prices)
     {
         $result = [];
 
@@ -49,9 +53,9 @@ abstract class PriceStrategy
             $dates[] = $item;
         }
 
-
-
         return $dates;
+
+
     }
 
     public function normalizeIntervals($prices) : array
@@ -60,26 +64,26 @@ abstract class PriceStrategy
         $value = $prices[0]->value;
         $startDate = $prices[0]->startDate;
         $expirationDate = $prices[0]->expirationDate;
-        $next = true;
+
         $latestPrice = null;
 
         /* @var $prices Price[] */
-        for($i=0; $i<=count($prices); $i++)
+        for($i=1; $i<=count($prices)-1; $i++)
         {
-            if($prices[$i]->value === $value && $next) {
+            if($prices[$i]->value === $value && $i !== (count($prices)-1)) {
                 $expirationDate = $prices[$i]->expirationDate;
-                $next = true;
                 continue;
             }
             if($prices[$i]->value !== $value) {
-                $next = false;
                 $result[] = new Price($i, $value, $startDate, $expirationDate);
                 $startDate = $prices[$i]->startDate;
                 $expirationDate = $prices[$i]->expirationDate;
                 $value = $prices[$i]->value;
             }
 
-
+            if($i === (count($prices)-1)) {
+                $result[] = new Price($i, $value, $startDate, $prices[$i]->expirationDate);
+            }
 
         }
 

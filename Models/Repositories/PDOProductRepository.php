@@ -49,6 +49,7 @@ class PDOProductRepository implements IProductRepository
 
     /**
      * @param int $id
+     * @throws ModelNotFoundException
      * @return Product
      */
     public function getById($id): Product
@@ -58,8 +59,13 @@ class PDOProductRepository implements IProductRepository
     products.default_price, prices.id AS prices_id, prices.value, prices.start_date, prices.expiration_date    
           FROM products LEFT JOIN prices on products.id = prices.product_id WHERE products.id=:id");
         $stmt->execute([$id]);
-        $result = $stmt->fetchAll();
-        echo var_dump($this->toEntity($result)); die;
+
+
+
+        if(!$res = $this->toEntity($stmt->fetchAll())[0])
+            throw new ModelNotFoundException('Can not find product with such id');
+
+        return $res;
     }
 
     /**
@@ -76,51 +82,56 @@ class PDOProductRepository implements IProductRepository
 
     /**
      * @param int $id
+     * @throws ModelRuntimeException
      * @return bool
      */
     public function delete($id): bool
     {
         try {
 
-            $stmt = $this->pdo->prepare("DELETE FROM MyGuests WHERE id=:id");
+            $stmt = $this->pdo->prepare("DELETE FROM products WHERE id=:id");
 
             $res = $stmt->execute([$id]);
 
-            echo var_dump($res); die;
+            return $res;
 
         }
         catch(PDOException $e)
         {
-            throw $e;
+            throw new ModelRuntimeException($e->getMessage().'  Cannot delete product with such id');
         }
     }
 
 
     private function update(Product $product) {
+
         try {
-            $stmt = $this->pdo->prepare("INSERT INTO products (name, discount, default_price)
-    VALUES (:name, :discount, :default_price)");
-            $stmt->execute([$product->name, $product->discount, $product->defaultPrice]);
-        }catch (PDOException $e)
-        {
-            throw $e;
+            $stmt = $this->pdo->prepare("UPDATE products 
+              SET name=:name, discount=:discount, default_price=:default_price WHERE id=:id");
+
+            $stmt->execute([$product->name, $product->discount, $product->defaultPrice, $product->id]);
+
+            $this->updatePrices($product);
+
+            return $product->id;
+        }catch (PDOException $e){
+            throw new ModelRuntimeException($e->getMessage(). 'Error while updating product');
         }
     }
 
     private function create(Product $product) {
         try {
+            $stmt = $this->pdo->prepare("INSERT INTO products 
+                (name, discount, default_price)
+                VALUES (:name, :discount, :default_price)");
 
-            $stmt = $this->pdo->prepare("INSERT INTO products (name, discount, default_price)
-    VALUES (:name, :discount, :default_price)");
             $stmt->execute([$product->name, $product->discount, $product->defaultPrice]);
             $prod_id = $this->pdo->lastInsertId();
 
             $this->createPrices($product, $prod_id);
 
             return $prod_id;
-        }catch (PDOException $e)
-        {
-//            throw $e;
+        }catch (PDOException $e){
             throw new ModelRuntimeException($e->getCode().' Error occur while inserting data');
         }
     }
@@ -177,22 +188,38 @@ class PDOProductRepository implements IProductRepository
     private function toEntity(array $arr) {
         $result = [];
         $product = new Product();
-        foreach ($arr as $item) {
-            if($product->id !== $item['product_id']) {
+        for($i=0; $i<count($arr); $i++) {
+            if($product->id !== $arr[$i]['product_id']) {
                 $result[] = $product;
                 $product = new Product();
-                $product->id = $item["product_id"];
-                $product->name = $item["name"];
-                $product->discount = $item["discount"];
-                $product->defaultPrice = $item["default_price"];
+                $product->id = $arr[$i]["product_id"];
+                $product->name = $arr[$i]["name"];
+                $product->discount = $arr[$i]["discount"];
+                $product->defaultPrice = $arr[$i]["default_price"];
             }
 
-            if(!empty($item["prices_id"])) {
-                $product->addPrice(new Price($item["prices_id"],
-                    $item["value"], $item["start_date"], $item["expiration_date"]));
+            if(!empty($arr[$i]["prices_id"])) {
+                $product->addPrice(new Price($arr[$i]["prices_id"],
+                    $arr[$i]["value"], $arr[$i]["start_date"], $arr[$i]["expiration_date"]));
             }
+
+            if($i === count($arr)-1)
+                $result[] = $product;
+        }
+
+        /* first element is empty Product */
+        if(!empty($result)) {
+            array_shift($result);
         }
 
         return $result;
+    }
+
+    private function updatePrices(Product $product)
+    {
+        $stmt = $this->pdo->prepare('DELETE FROM prices WHERE product_id=:product_id');
+        $stmt->execute([$product->id]);
+
+        $this->createPrices($product, $product->id);
     }
 }

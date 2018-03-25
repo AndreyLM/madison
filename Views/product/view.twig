@@ -109,22 +109,20 @@
     <div class="col-lg-6">
         <div class="card">
             <div class="card-header">
-                <strong class="card-title">Dynamic Price Changing (shortest)</strong>
+                <strong class="card-title">Dynamic Price Changing (byDuration)</strong>
             </div>
             <div class="card-body">
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Value</th>
                         <th scope="col">Start Date</th>
                         <th scope="col">Expiration Date</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {% for price in product.getDynamicPriceChanging('shortest') %}
+                    {% for price in product.getDynamicPriceChanging('byDuration') %}
                         <tr>
-                            <td>{{ price.id }}</td>
                             <td>{{ price.value }} UAH</td>
                             <td>{{ price.startDate | date('d/m/Y') }}</td>
                             <td>{{ price.expirationDate | date('d/m/Y') }}</td>
@@ -139,22 +137,20 @@
     <div class="col-lg-6">
         <div class="card">
             <div class="card-header">
-                <strong class="card-title">Dynamic Price Changing (lasting)</strong>
+                <strong class="card-title">Dynamic Price Changing (byBeginning)</strong>
             </div>
             <div class="card-body">
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Value</th>
                         <th scope="col">Start Date</th>
                         <th scope="col">Expiration Date</th>
                     </tr>
                     </thead>
                     <tbody>
-                    {% for price in  product.getDynamicPriceChanging %}
+                    {% for price in  product.getDynamicPriceChanging('byBeginning') %}
                         <tr>
-                            <td>{{ price.id }}</td>
                             <td>{{ price.value }} UAH</td>
                             <td>{{ price.startDate | date('d/m/Y') }}</td>
                             <td>{{ price.expirationDate | date('d/m/Y') }}</td>
@@ -166,6 +162,9 @@
         </div>
     </div>
 
+    <div>
+        <p>Chart should be like this. But there was some trouble with ajax request (( </p>
+    </div>
     <div class="col-lg-12">
         <div id="chart_div" style="width: 100%; height: 500px;"></div>
     </div>
