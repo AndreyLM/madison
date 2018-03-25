@@ -2,6 +2,7 @@
 namespace App\Template\Twig;
 
 use App\Template\ITemplateRenderer;
+use Psr\Container\ContainerInterface;
 use Twig\Environment;
 
 class TwigRenderer implements ITemplateRenderer
@@ -13,18 +14,23 @@ class TwigRenderer implements ITemplateRenderer
     /**
      * @var
      */
-    private $twig;
+    private $extension;
+    /**
+     * @var ContainerInterface
+     */
+    private $container;
 
-    public function __construct(Environment $twig, $extension)
+    public function __construct(Environment $twig, $extension, ContainerInterface $container)
     {
         $this->environment = $twig;
-        $this->twig = $extension;
+        $this->extension = $extension;
+        $this->container = $container;
     }
 
     public function render($name, array $params)
     {
-        return $this->environment->render($name.'.'.$this->twig,
-            array_merge_recursive($params, ['baseUrl' => '/madison/public']));
+        return $this->environment->render($name.'.'.$this->extension,
+            array_merge_recursive($params, ['baseUrl' => $this->container->get('config')['basePath']]));
     }
 
 }

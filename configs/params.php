@@ -13,5 +13,12 @@ return [
         'extensions' => [
             TwigRouteExtension::class,
         ]
+    ],
+    'connection' => [
+        'host' => 'db',
+        'db'   => 'myDb',
+        'user' => 'user',
+        'pass' => 'test',
+        'charset' => 'utf8'
     ]
 ];

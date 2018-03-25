@@ -18,6 +18,7 @@ use Models\Exceptions\ModelNotFoundException;
 use Models\Exceptions\ModelRuntimeException;
 use Models\Repositories\IProductRepository;
 use Psr\Http\Message\ServerRequestInterface;
+use Zend\Diactoros\Response\JsonResponse;
 
 class ProductController extends BaseController
 {
@@ -40,9 +41,14 @@ class ProductController extends BaseController
     {
         $id = $this->request->getAttribute('id');
 
+        $product = $this->getModel($id);
 
         return $this->renderHtml('product/view', [
-            'product' => $this->getModel($id)]);
+            'product' => $product,
+            'getDynamic' => function() use ($product) {
+                /** @var $product Product */
+                return $product->getDynamicPriceChanging();
+        }]);
     }
 
     public function create()
@@ -57,6 +63,24 @@ class ProductController extends BaseController
         $product = $this->getModel($id);
 
         return $this->saveProduct('product/update', $product);
+    }
+
+    public function getChartDate()
+    {
+        $model = $this->getModel($this->request->getAttribute('id'));
+
+        $date = $model->getDynamicPriceChanging();
+
+        $result = [];
+        $result[] = ['value', 'date'];
+
+        /* @var $item Price*/
+        foreach ($date as $item) {
+            $result[] = [$item->value, $item->startDate];
+            $result[] = [$item->value, $item->expirationDate];
+        }
+
+        return new JsonResponse($result);
     }
 
     public function delete()

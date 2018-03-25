@@ -9,7 +9,9 @@
 namespace Models\Entities\PriceStrategy;
 
 
-class LatestDatePriceStrategy implements IPriceStrategy
+use Models\Entities\Price;
+
+class LatestDatePriceStrategy extends PriceStrategy
 {
 
     /**
@@ -20,16 +22,26 @@ class LatestDatePriceStrategy implements IPriceStrategy
      */
     public function getCurrentPrice($defaultPrice, array $prices, $date = null): int
     {
-        // TODO: Implement getCurrentPrice() method.
+        $today = $date;
+        $startDate = 0;
+        $currentPrice = $defaultPrice;
+
+        /* @var $price Price */
+        foreach($prices as $price) {
+            if($today<$price->startDate || $today>$price->expirationDate) {
+                continue;
+            }
+
+
+           if($startDate < $price->startDate) {
+                $startDate = $price->startDate;
+                $currentPrice = $price->value;
+           }
+
+        }
+
+        return $currentPrice;
     }
 
-    /**
-     * @param $defaultPrice
-     * @param $prices
-     * @return array
-     */
-    public function getDynamicPriceChanging($defaultPrice, $prices): array
-    {
-        // TODO: Implement getDynamicPriceChanging() method.
-    }
+
 }

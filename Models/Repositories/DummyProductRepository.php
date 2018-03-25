@@ -10,6 +10,7 @@ namespace Models\Repositories;
 
 
 use Models\Entities\Price;
+use Models\Entities\PriceStrategy\LatestDatePriceStrategy;
 use Models\Entities\PriceStrategy\ShortestDatePriceStrategy;
 use Models\Entities\Product;
 use Models\Exceptions\ModelNotFoundException;
@@ -94,13 +95,14 @@ class DummyProductRepository implements IProductRepository
 
         $product1 = new Product(5, 'Uniform 1', 30, 4000, Product::PRICE_SHORTEST);
         $product1->addPriceStrategy(Product::PRICE_SHORTEST, new ShortestDatePriceStrategy());
+        $product1->addPriceStrategy(Product::PRICE_LATEST, new LatestDatePriceStrategy());
 
         $product1->addPrice(new Price(1, 1200, time()-365*2*24*3600,
-            time()-365*24*3600));
-        $product1->addPrice(new Price(2, 1400, time()-365*3*24*3600, time()-365*2*3600));
+            time()-365*24*3600), time());
+        $product1->addPrice(new Price(2, 1400, time()-365*3*24*3600, time()-365*2*3600), time());
         $product1->addPrice(new Price(3, 800, time()-365*24*3600, time()));
-        $product1->addPrice(new Price(4, 600, time()-24*3600, time()+24*3600));
-        $product1->addPrice(new Price(5, 1500, time()-24*3600, time()+2*24*3600));
+        $product1->addPrice(new Price(4, 600, time()-24*3600, time()+24*3600), time());
+        $product1->addPrice(new Price(5, 1500, time()-24*3600, time()+2*24*3600), time());
 
         return $product1;
     }

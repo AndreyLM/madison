@@ -1,6 +1,7 @@
 <?php
 
 use App\Router\IRouter;
+use Controllers\ConfigController;
 use Controllers\DefaultController;
 use Controllers\ProductController;
 use Models\Repositories\IProductRepository;
@@ -10,6 +11,15 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 
 $router = $serviceManager->get(IRouter::class);
 
+$router->addRoute('get_chart_data', '/product/api/chart/{id}', function ($request, $template)use ($serviceManager){
+    $controller = new ProductController($request, $template, $serviceManager->get(IProductRepository::class));
+    return $controller->getChartDate();
+});
+
+$router->addRoute('configs_create_tables', '/config/create/tables', function ($request, $template)use ($serviceManager){
+    $controller = new ConfigController($request, $template, $serviceManager);
+    return $controller->createTables();
+});
 
 $router->addRoute('product', '/product/{id}', function ($request, $template) use ($serviceManager) {
     $controller = new ProductController($request, $template, $serviceManager->get(IProductRepository::class));

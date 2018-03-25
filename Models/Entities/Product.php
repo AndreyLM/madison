@@ -1,7 +1,7 @@
 <?php
 namespace Models\Entities;
 
-use Models\Entities\PriceStrategy\IPriceStrategy;
+use Models\Entities\PriceStrategy\PriceStrategy;
 
 class Product
 {
@@ -18,10 +18,10 @@ class Product
     /* @var Price[]*/
     private $prices = [];
 
-    /* @var IPriceStrategy[] */
+    /* @var PriceStrategy[] */
     private $priceStrategies = [];
 
-    public function __construct($id = null, $name = '', $discount = 0, $defaultPrice = 0, $priceStrategy)
+    public function __construct($id = null, $name = '', $discount = 0, $defaultPrice = 0, $priceStrategy = self::PRICE_SHORTEST)
     {
         $this->id = $id;
         $this->name = $name;
@@ -62,7 +62,7 @@ class Product
         return true;
     }
 
-    public function addPriceStrategy($key, IPriceStrategy $priceStrategy)
+    public function addPriceStrategy($key, PriceStrategy $priceStrategy)
     {
 
         $this->priceStrategies[$key] = $priceStrategy;

@@ -29,8 +29,8 @@ return [
            return $app;
 
        },
-        IProductRepository::class => function() {
-            return new \Models\Repositories\DummyProductRepository();
+        IProductRepository::class => function(ContainerInterface $container) {
+            return new \Models\Repositories\PDOProductRepository($container->get('config')['connection']);
         },
        IRouter::class => function(ContainerInterface $container) {
             $basePath = $container->get('config')['basePath'];
@@ -65,7 +65,7 @@ return [
             }
 
             return new TwigRenderer($environment,
-                $config['file_extension']);
+                $config['file_extension'], $container);
         },
     ],
 ];
